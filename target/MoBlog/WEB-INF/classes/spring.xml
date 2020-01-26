@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <!--开启注解的扫描，处理service和dao-->
+    <context:component-scan base-package="com.moblog.service" >
+        <context:exclude-filter type="aspectj" expression="com.moblog.controller"/>
+        <context:exclude-filter type="aspectj" expression="com.moblog.domain"/>
+        <context:exclude-filter type="aspectj" expression="com.moblog.util"/>
+    </context:component-scan>
+
+    <!--配置SqlSessionFactory工厂-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <!--配置AccountDao接口所在包-->
+    <bean id="mapperScanner" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.moblog.dao"/>
+    </bean>
+
+    <!--配置Spring框架声明式事务管理-->
+    <!--配置事务管理器-->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <!--Spring整合MyBatis框架-->
+    <!--配置连接池-->
+    <bean id="dataSource"
+          class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql:///moblog?useUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=GMT%2B8" />
+        <property name="username" value="root" />
+        <property name="password" value="23122918lxc" />
+    </bean>
+
+    <!--配置事务通知-->
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="find*" read-only="true"/>
+            <tx:method name="*" isolation="DEFAULT"/>
+        </tx:attributes>
+    </tx:advice>
+
+    <!--配置AOP增强-->
+<!--    <aop:config>-->
+<!--        &lt;!&ndash;    <aop:advisor advice-ref="txAdvice" pointcut="execution(* cn.sxjd.facepay.service.impl.*ServiceImpl.*(..))"/>&ndash;&gt;-->
+<!--        <aop:pointcut id="services" expression="execution(* com.sxjdxy.mochat.service.impl.*ServiceImpl.*(..))"/>-->
+<!--        <aop:aspect ref="sessionAspect">-->
+<!--            <aop:around method="around" pointcut-ref="services"/>-->
+<!--        </aop:aspect>-->
+<!--    </aop:config>-->
+
+</beans>
