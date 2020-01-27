@@ -25,7 +25,7 @@ public class AdminServiceImpl implements AdminService {
     public int login(HttpServletRequest request, String username, String password, String vcode) {
         //验证vcode
         HttpSession session = request.getSession();
-        if (!vcode.equalsIgnoreCase((String) session.getAttribute("vcode"))){
+        if (vcode==null||!vcode.equalsIgnoreCase((String) session.getAttribute("vcode"))){
             //验证码错误
             return -1;
         }

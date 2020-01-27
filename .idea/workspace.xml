@@ -2,11 +2,34 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="MoBlog:war" />
+      <artifact name="MoBlog:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54bc5f1d-8c27-4b3e-bb0f-a148caa68edf" name="Default Changelist" comment="" />
+    <list default="true" id="54bc5f1d-8c27-4b3e-bb0f-a148caa68edf" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/bootstrap-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/bootstrap-theme.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/loginbg.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/mop.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-3.4.1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-3.4.1.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/moblog/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moblog/controller/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/moblog/service/impl/AdminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moblog/service/impl/AdminServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MoBlog/WEB-INF/classes/com/moblog/controller/TestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoBlog/WEB-INF/classes/com/moblog/controller/TestController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MoBlog/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoBlog/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/moblog/controller/TestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/moblog/controller/TestController.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,6 +45,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -30,6 +56,9 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectId" id="1Wpjyz8ArD9w0qwSewv902aZI7p" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -38,6 +67,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/target/MoBlog/images" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -50,6 +80,13 @@
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\workspace\Intellij_IDEA_Project\MoBlog\target\MoBlog\images" />
+      <recent name="F:\workspace\Intellij_IDEA_Project\MoBlog\src\main\webapp\images" />
+      <recent name="F:\workspace\Intellij_IDEA_Project\MoBlog\src\main\webapp\js" />
+      <recent name="F:\workspace\Intellij_IDEA_Project\MoBlog\src\main\webapp\css" />
+      <recent name="F:\workspace\Intellij_IDEA_Project\MoBlog\src\main\webapp\fonts" />
+    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.moblog.util" />
     </key>
@@ -72,9 +109,10 @@
       </method>
     </configuration>
     <configuration name="Tomcat 9.0.30" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.30" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="UPDATING_POLICY" value="restart-server" />
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <deployment>
-        <artifact name="MoBlog:war">
+        <artifact name="MoBlog:war exploded">
           <settings>
             <option name="CONTEXT_PATH" value="/moblog" />
           </settings>
@@ -139,7 +177,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="MoBlog:war" />
+          <artifact name="MoBlog:war exploded" />
         </option>
       </method>
     </configuration>
@@ -166,7 +204,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -187,7 +225,9 @@
       <option name="presentableId" value="Default" />
       <updated>1579853688307</updated>
       <workItem from="1579853694262" duration="5842000" />
-      <workItem from="1580026940883" duration="4430000" />
+      <workItem from="1580026940883" duration="4976000" />
+      <workItem from="1580096997664" duration="41000" />
+      <workItem from="1580106462808" duration="6475000" />
     </task>
     <servers />
   </component>
@@ -195,10 +235,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1579859061523">
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580106772115">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1579859061523" />
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1580106772115" />
     <state x="488" y="48" key="#com.intellij.ide.util.MemberChooser" timestamp="1580029592780">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -211,54 +251,74 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="529" y="253" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1366.728@0.0.1366.728" timestamp="1579857123199" />
-    <state width="1294" height="429" key="GridCell.Tab.0.bottom" timestamp="1580031497738">
+    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1580113087519">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="429" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580031497738" />
-    <state width="1294" height="429" key="GridCell.Tab.0.center" timestamp="1580031497738">
+    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1580113087519" />
+    <state width="1294" height="436" key="GridCell.Tab.0.bottom" timestamp="1580114824627">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="429" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1580031497738" />
-    <state width="1294" height="429" key="GridCell.Tab.0.left" timestamp="1580031497738">
+    <state width="1294" height="436" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580114824627" />
+    <state width="1294" height="436" key="GridCell.Tab.0.center" timestamp="1580114824627">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="429" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1580031497738" />
-    <state width="1294" height="429" key="GridCell.Tab.0.right" timestamp="1580031497738">
+    <state width="1294" height="436" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1580114824627" />
+    <state width="1294" height="436" key="GridCell.Tab.0.left" timestamp="1580114824627">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="429" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1580031497738" />
-    <state width="1294" height="429" key="GridCell.Tab.1.bottom" timestamp="1580031497738">
+    <state width="1294" height="436" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1580114824627" />
+    <state width="1294" height="436" key="GridCell.Tab.0.right" timestamp="1580114824627">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="429" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580031497738" />
-    <state width="1294" height="429" key="GridCell.Tab.1.center" timestamp="1580031497738">
+    <state width="1294" height="436" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1580114824627" />
+    <state width="1294" height="436" key="GridCell.Tab.1.bottom" timestamp="1580114824628">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="429" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1580031497738" />
-    <state width="1294" height="429" key="GridCell.Tab.1.left" timestamp="1580031497738">
+    <state width="1294" height="436" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580114824628" />
+    <state width="1294" height="436" key="GridCell.Tab.1.center" timestamp="1580114824627">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="429" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1580031497738" />
-    <state width="1294" height="429" key="GridCell.Tab.1.right" timestamp="1580031497738">
+    <state width="1294" height="436" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1580114824627" />
+    <state width="1294" height="436" key="GridCell.Tab.1.left" timestamp="1580114824627">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="429" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1580031497738" />
-    <state width="1294" height="429" key="GridCell.Tab.2.bottom" timestamp="1580031497738">
+    <state width="1294" height="436" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1580114824627" />
+    <state width="1294" height="436" key="GridCell.Tab.1.right" timestamp="1580114824627">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="429" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580031497738" />
-    <state width="1294" height="429" key="GridCell.Tab.2.center" timestamp="1580031497738">
+    <state width="1294" height="436" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1580114824627" />
+    <state width="1294" height="436" key="GridCell.Tab.2.bottom" timestamp="1580114824628">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="429" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1580031497738" />
-    <state width="1294" height="429" key="GridCell.Tab.2.left" timestamp="1580031497738">
+    <state width="1294" height="436" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580114824628" />
+    <state width="1294" height="436" key="GridCell.Tab.2.center" timestamp="1580114824628">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="429" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1580031497738" />
-    <state width="1294" height="429" key="GridCell.Tab.2.right" timestamp="1580031497738">
+    <state width="1294" height="436" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1580114824628" />
+    <state width="1294" height="436" key="GridCell.Tab.2.left" timestamp="1580114824628">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="429" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1580031497738" />
+    <state width="1294" height="436" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1580114824628" />
+    <state width="1294" height="436" key="GridCell.Tab.2.right" timestamp="1580114824628">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1294" height="436" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1580114824628" />
+    <state width="1294" height="436" key="GridCell.Tab.3.bottom" timestamp="1580114824629">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1294" height="436" key="GridCell.Tab.3.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580114824629" />
+    <state width="1294" height="436" key="GridCell.Tab.3.center" timestamp="1580114824628">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1294" height="436" key="GridCell.Tab.3.center/0.0.1366.728@0.0.1366.728" timestamp="1580114824628" />
+    <state width="1294" height="436" key="GridCell.Tab.3.left" timestamp="1580114824628">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1294" height="436" key="GridCell.Tab.3.left/0.0.1366.728@0.0.1366.728" timestamp="1580114824628" />
+    <state width="1294" height="436" key="GridCell.Tab.3.right" timestamp="1580114824629">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1294" height="436" key="GridCell.Tab.3.right/0.0.1366.728@0.0.1366.728" timestamp="1580114824629" />
     <state x="213" y="19" key="Maven.ArtifactSearchDialog" timestamp="1579857143053">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
