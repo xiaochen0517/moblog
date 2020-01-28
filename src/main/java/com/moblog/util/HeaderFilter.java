@@ -3,6 +3,7 @@ package com.moblog.util;
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 /**
@@ -13,14 +14,16 @@ import java.io.IOException;
  * @version 0.1
  */
 public class HeaderFilter implements Filter {
+
+    private static final String TAG = "HeaderFilter";
+
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-
     }
 
     @Override
     public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
-        HttpServletRequest request = (HttpServletRequest)req;
+        HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) res;
         String originHeader = request.getHeader("Origin");
         response.setHeader("Access-Control-Allow-Origin", originHeader);
@@ -28,9 +31,36 @@ public class HeaderFilter implements Filter {
         response.setHeader("Access-Control-Max-Age", "0");
         response.setHeader("Access-Control-Allow-Headers", "Origin, No-Cache, X-Requested-With, If-Modified-Since, Pragma, Last-Modified, Cache-Control, Expires, Content-Type, X-E4M-With,userId,token");
         response.setHeader("Access-Control-Allow-Credentials", "true");
-        response.setHeader("XDomainRequestAllowed","1");
-        response.setHeader("XDomainRequestAllowed","1");
-        chain.doFilter(request, response);
+        response.setHeader("XDomainRequestAllowed", "1");
+        response.setHeader("XDomainRequestAllowed", "1");
+        //获取请求ip
+        Log.d(TAG, "访问来源IP-->"+request.getRemoteAddr());
+        //获取请求路径
+        String uri = request.getRequestURI();
+        Log.d(TAG, "访问uri-->" + uri);
+        if (uri.contains("index") ||
+                uri.equalsIgnoreCase("/moblog/") ||
+                uri.contains("css") ||
+                uri.contains("js") ||
+                uri.contains("images") ||
+                uri.contains("fonts") ||
+                uri.contains("login") ||
+                uri.contains("util")) {
+            chain.doFilter(request, response);
+        }else{
+            HttpSession session = request.getSession();
+            String username = (String) session.getAttribute("username");
+
+            if (username != null && !username.equals("")){
+                //已登录
+                Log.d(TAG, "用户名-->"+username);
+                chain.doFilter(request, response);
+            }else{
+                //未登录，跳转到登录页面
+                response.setStatus(302);
+                response.setHeader("location", "/moblog/");
+            }
+        }
     }
 
     @Override

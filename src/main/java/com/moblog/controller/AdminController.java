@@ -31,7 +31,7 @@ public class AdminController {
         switch (result){
             case 0:
                 request.setAttribute("msg", "登录成功");
-                break;
+                return "home";
             case -1:
                 request.setAttribute("msg", "验证码错误");
                 break;
@@ -39,7 +39,8 @@ public class AdminController {
                 request.setAttribute("msg", "用户名或密码错误");
                 break;
         }
-        return "loginre";
+
+        return "forward:/";
     }
 
 }

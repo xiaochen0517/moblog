@@ -34,6 +34,8 @@ public class AdminServiceImpl implements AdminService {
             //用户名或密码错误
             return -2;
         }
+        //登录成功
+        session.setAttribute("username", username);
         return 0;
     }
 }
