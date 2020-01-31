@@ -1,6 +1,9 @@
 package com.moblog.service;
 
+import com.moblog.domain.admin.ReUser;
+
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * 功能：
@@ -19,5 +22,18 @@ public interface AdminService {
      * @return 状态码
      */
     int login(HttpServletRequest request, String username, String password, String vcode);
+
+    /**
+     * 获取用户列表
+     * @param page 页数
+     * @return
+     */
+    List<ReUser> userlist(int page);
+
+    /**
+     * 获取用户
+     * @return
+     */
+    int[] getUserSize();
 
 }

@@ -1,7 +1,9 @@
 package com.test.mybatis;
 
+import com.moblog.dao.AdminDao;
 import com.moblog.dao.UserDao;
 import com.moblog.domain.User;
+import com.moblog.domain.admin.ReUser;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,12 +26,25 @@ public class TestOne {
     @Autowired
     private UserDao userDao;
 
+    @Autowired
+    private AdminDao adminDao;
+
     @Test
     public void test1(){
         List<User> users = userDao.findAll();
         for (User user:users){
             System.out.println(user.toString());
         }
+    }
+
+    @Test
+    public void test2(){
+        List<ReUser> accountList = adminDao.findAccountList((1 - 1) * 10);
+        for (ReUser a: accountList){
+            System.out.println(a.toString());
+        }
+        int accountSize = adminDao.findAccountSize();
+        System.out.println(accountSize);
     }
 
 }

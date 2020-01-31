@@ -34,7 +34,7 @@ public class HeaderFilter implements Filter {
         response.setHeader("XDomainRequestAllowed", "1");
         response.setHeader("XDomainRequestAllowed", "1");
         //获取请求ip
-        Log.d(TAG, "访问来源IP-->"+request.getRemoteAddr());
+//        Log.d(TAG, "访问来源IP-->"+request.getRemoteAddr());
         //获取请求路径
         String uri = request.getRequestURI();
         Log.d(TAG, "访问uri-->" + uri);

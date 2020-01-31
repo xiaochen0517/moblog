@@ -1,12 +1,14 @@
 package com.moblog.service.impl;
 
 import com.moblog.dao.AdminDao;
+import com.moblog.domain.admin.ReUser;
 import com.moblog.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 /**
  * 功能：
@@ -17,6 +19,10 @@ import javax.servlet.http.HttpSession;
  */
 @Component
 public class AdminServiceImpl implements AdminService {
+
+    private static final String TAG = "管理员Service接口实现类";
+
+    private static final int pageitem = 10;
 
     @Autowired
     private AdminDao adminDao;
@@ -37,5 +43,21 @@ public class AdminServiceImpl implements AdminService {
         //登录成功
         session.setAttribute("username", username);
         return 0;
+    }
+
+    @Override
+    public List<ReUser> userlist(int page) {
+        //获取数据
+        return adminDao.findAccountList((page - 1) * pageitem);
+    }
+
+    @Override
+    public int[] getUserSize() {
+        int accountSize = adminDao.findAccountSize();
+        int pageSize = accountSize / pageitem;
+        if (accountSize%pageitem > 0){
+            pageSize++;
+        }
+        return new int[]{accountSize, pageSize};
     }
 }
