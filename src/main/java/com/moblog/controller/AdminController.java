@@ -1,5 +1,7 @@
 package com.moblog.controller;
 
+import com.moblog.domain.Account;
+import com.moblog.domain.admin.ReArticle;
 import com.moblog.domain.admin.ReUser;
 import com.moblog.service.AdminService;
 import com.moblog.util.Log;
@@ -92,6 +94,11 @@ public class AdminController {
         return modelAndView;
     }
 
+    /**
+     * 用户列表
+     * @param page 页数
+     * @return
+     */
     @RequestMapping(value = "/userpage", method = RequestMethod.GET)
     private ModelAndView userPage(int page){
         Log.d(TAG, "page-->"+page);
@@ -112,6 +119,48 @@ public class AdminController {
         modelAndView.addObject("allitem", pageinfo[0]);//总条数
         modelAndView.addObject("allpage", pageinfo[1]);//总页数
         modelAndView.setViewName("user");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/userinfopage", method = RequestMethod.GET)
+    private ModelAndView userinfoPage(int userid){
+        ModelAndView modelAndView = new ModelAndView();
+        //判断信息
+        if (userid < 1){
+            modelAndView.setViewName("error");
+            return modelAndView;
+        }
+        //获取用户信息
+        Account userinfo = adminService.getUserinfo(userid);
+        modelAndView.addObject("account", userinfo);
+        modelAndView.addObject("activeitem", 1);
+        modelAndView.setViewName("userinfo");
+        return modelAndView;
+    }
+
+    /**
+     * 用户文章列表
+     * @param page 页数
+     * @return
+     */
+    @RequestMapping(value = "/articlepage", method = RequestMethod.GET)
+    private ModelAndView articlePage(int userid, int page){
+        ModelAndView modelAndView = new ModelAndView();
+        if (userid<1 || page<1){
+            modelAndView.setViewName("error");
+            return modelAndView;
+        }
+        //获取文章数据
+        List<ReArticle> userArticle = adminService.getUserArticle(userid, page);
+        //获取文章数目
+        int[] userArticleSize = adminService.getUserArticleSize(userid);
+        modelAndView.addObject("articles", userArticle);
+        modelAndView.addObject("allsize", userArticleSize[0]);
+        modelAndView.addObject("allpage", userArticleSize[1]);
+        modelAndView.addObject("page", page);
+        modelAndView.addObject("userid", userid);
+        modelAndView.addObject("activeitem", 2);
+        modelAndView.setViewName("article");
         return modelAndView;
     }
 

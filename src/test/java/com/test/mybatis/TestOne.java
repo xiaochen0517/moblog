@@ -2,6 +2,7 @@ package com.test.mybatis;
 
 import com.moblog.dao.AdminDao;
 import com.moblog.dao.UserDao;
+import com.moblog.domain.Article;
 import com.moblog.domain.User;
 import com.moblog.domain.admin.ReUser;
 import org.junit.Test;
@@ -45,6 +46,14 @@ public class TestOne {
         }
         int accountSize = adminDao.findAccountSize();
         System.out.println(accountSize);
+    }
+
+    @Test
+    public void test3(){
+        List<Article> userArticle = adminDao.findUserArticle(1, 0);
+        for(Article a: userArticle){
+            System.out.println(a.toString());
+        }
     }
 
 }

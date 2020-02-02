@@ -1,5 +1,7 @@
 package com.moblog.service;
 
+import com.moblog.domain.Account;
+import com.moblog.domain.admin.ReArticle;
 import com.moblog.domain.admin.ReUser;
 
 import javax.servlet.http.HttpServletRequest;
@@ -35,5 +37,23 @@ public interface AdminService {
      * @return
      */
     int[] getUserSize();
+
+    /**
+     * 获取用户信息
+     * @param userid
+     * @return
+     */
+    Account getUserinfo(int userid);
+
+    /**
+     * 获取用户文章列表
+     * @param userid
+     * @param page
+     * @return
+     */
+    List<ReArticle> getUserArticle(int userid, int page);
+
+
+    int[] getUserArticleSize(int userid);
 
 }

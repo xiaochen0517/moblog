@@ -7,12 +7,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54bc5f1d-8c27-4b3e-bb0f-a148caa68edf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moblog/domain/admin/ReUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/error.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/headbar.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/leftbar.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/md5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/moblog/domain/admin/ReArticle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/article.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/userheadbar.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/userinfo.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/userleftbar.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/MoBlog/WEB-INF/classes/com/moblog/domain/admin/ReArticle.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/MoBlog/WEB-INF/pages/article.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/MoBlog/WEB-INF/pages/userheadbar.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/MoBlog/WEB-INF/pages/userinfo.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/MoBlog/WEB-INF/pages/userleftbar.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/moblog/domain/admin/ReArticle.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/moblog/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moblog/controller/AdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/moblog/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moblog/controller/TestController.java" afterDir="false" />
@@ -21,7 +26,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/moblog/service/impl/AdminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moblog/service/impl/AdminServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/moblog/util/HeaderFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moblog/util/HeaderFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/test/mybatis/TestOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/test/mybatis/TestOne.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/MoBlog/WEB-INF/classes/com/moblog/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoBlog/WEB-INF/classes/com/moblog/controller/AdminController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/MoBlog/WEB-INF/classes/com/moblog/controller/TestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoBlog/WEB-INF/classes/com/moblog/controller/TestController.class" afterDir="false" />
@@ -30,7 +35,7 @@
       <change beforePath="$PROJECT_DIR$/target/MoBlog/WEB-INF/classes/com/moblog/service/impl/AdminServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoBlog/WEB-INF/classes/com/moblog/service/impl/AdminServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/MoBlog/WEB-INF/classes/com/moblog/util/HeaderFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoBlog/WEB-INF/classes/com/moblog/util/HeaderFilter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/MoBlog/WEB-INF/pages/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoBlog/WEB-INF/pages/home.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/MoBlog/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoBlog/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MoBlog/WEB-INF/pages/user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoBlog/WEB-INF/pages/user.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/moblog/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/moblog/controller/AdminController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/moblog/controller/TestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/moblog/controller/TestController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/moblog/dao/AdminDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/moblog/dao/AdminDao.class" afterDir="false" />
@@ -49,8 +54,8 @@
       <list>
         <option value="spring-beans.schema" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -77,7 +82,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/target/MoBlog/js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -90,15 +95,15 @@
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.moblog.util" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\workspace\Intellij_IDEA_Project\MoBlog\src\main\webapp\WEB-INF\pages" />
       <recent name="F:\workspace\Intellij_IDEA_Project\MoBlog\target\MoBlog\js" />
       <recent name="F:\workspace\Intellij_IDEA_Project\MoBlog\src\main\webapp\js" />
       <recent name="F:\workspace\Intellij_IDEA_Project\MoBlog\target\MoBlog\images" />
       <recent name="F:\workspace\Intellij_IDEA_Project\MoBlog\src\main\webapp\images" />
-      <recent name="F:\workspace\Intellij_IDEA_Project\MoBlog\src\main\webapp\css" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.moblog.util" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.30">
@@ -129,6 +134,22 @@
       <option name="PACKAGE_NAME" value="com.test.mybatis" />
       <option name="MAIN_CLASS_NAME" value="com.test.mybatis.TestOne" />
       <option name="METHOD_NAME" value="test2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestOne.test3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MoBlog" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.test.mybatis.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.test.mybatis" />
+      <option name="MAIN_CLASS_NAME" value="com.test.mybatis.TestOne" />
+      <option name="METHOD_NAME" value="test3" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -212,9 +233,11 @@
       <item itemvalue="JUnit.TestOne.test1" />
       <item itemvalue="JUnit.TestOne.test2" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.30" />
+      <item itemvalue="JUnit.TestOne.test3" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestOne.test3" />
         <item itemvalue="JUnit.TestOne.test2" />
         <item itemvalue="JUnit.TestOne.test1" />
       </list>
@@ -265,7 +288,9 @@
       <workItem from="1580437590203" duration="5170000" />
       <workItem from="1580449413334" duration="14000" />
       <workItem from="1580458876875" duration="8448000" />
-      <workItem from="1580468388888" duration="6657000" />
+      <workItem from="1580468388888" duration="6990000" />
+      <workItem from="1580517398994" duration="2404000" />
+      <workItem from="1580636740824" duration="6890000" />
     </task>
     <task id="LOCAL-00001" summary="add home page">
       <created>1580211489629</created>
@@ -274,7 +299,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580211489629</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="添加登录密码加密&#10;添加记忆用户名密码功能&#10;修改主页&#10;添加用户管理页">
+      <created>1580475291009</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1580475291010</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,17 +315,19 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="add home page" />
-    <option name="LAST_COMMIT_MESSAGE" value="add home page" />
+    <MESSAGE value="添加登录密码加密&#10;添加记忆用户名密码功能&#10;修改主页&#10;添加用户管理页" />
+    <MESSAGE value="添加用户详情查看&#10;添加用户文章列表查看" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加用户详情查看&#10;添加用户文章列表查看" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580459766144">
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580636811428">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1580459766144" />
-    <state x="488" y="48" key="#com.intellij.ide.util.MemberChooser" timestamp="1580465185202">
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1580636811428" />
+    <state x="488" y="48" key="#com.intellij.ide.util.MemberChooser" timestamp="1580642400767">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="48" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1580465185202" />
+    <state x="488" y="48" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1580642400767" />
     <state x="413" y="140" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1580029216351">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -306,74 +340,74 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1580113087519" />
-    <state x="283" y="0" key="CommitChangelistDialog2" timestamp="1580211486683">
+    <state x="283" y="0" key="CommitChangelistDialog2" timestamp="1580643646642">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="283" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1580211486683" />
-    <state width="1294" height="413" key="GridCell.Tab.0.bottom" timestamp="1580474523147">
+    <state x="283" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1580643646642" />
+    <state width="1294" height="450" key="GridCell.Tab.0.bottom" timestamp="1580643477485">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="413" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580474523147" />
-    <state width="1294" height="413" key="GridCell.Tab.0.center" timestamp="1580474523147">
+    <state width="1294" height="450" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580643477485" />
+    <state width="1294" height="450" key="GridCell.Tab.0.center" timestamp="1580643477485">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="413" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1580474523147" />
-    <state width="1294" height="413" key="GridCell.Tab.0.left" timestamp="1580474523147">
+    <state width="1294" height="450" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1580643477485" />
+    <state width="1294" height="450" key="GridCell.Tab.0.left" timestamp="1580643477485">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="413" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1580474523147" />
-    <state width="1294" height="413" key="GridCell.Tab.0.right" timestamp="1580474523147">
+    <state width="1294" height="450" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1580643477485" />
+    <state width="1294" height="450" key="GridCell.Tab.0.right" timestamp="1580643477485">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="413" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1580474523147" />
-    <state width="1294" height="413" key="GridCell.Tab.1.bottom" timestamp="1580474523147">
+    <state width="1294" height="450" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1580643477485" />
+    <state width="1294" height="450" key="GridCell.Tab.1.bottom" timestamp="1580643477485">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="413" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580474523147" />
-    <state width="1294" height="413" key="GridCell.Tab.1.center" timestamp="1580474523147">
+    <state width="1294" height="450" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580643477485" />
+    <state width="1294" height="450" key="GridCell.Tab.1.center" timestamp="1580643477485">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="413" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1580474523147" />
-    <state width="1294" height="413" key="GridCell.Tab.1.left" timestamp="1580474523147">
+    <state width="1294" height="450" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1580643477485" />
+    <state width="1294" height="450" key="GridCell.Tab.1.left" timestamp="1580643477485">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="413" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1580474523147" />
-    <state width="1294" height="413" key="GridCell.Tab.1.right" timestamp="1580474523147">
+    <state width="1294" height="450" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1580643477485" />
+    <state width="1294" height="450" key="GridCell.Tab.1.right" timestamp="1580643477485">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="413" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1580474523147" />
-    <state width="1294" height="413" key="GridCell.Tab.2.bottom" timestamp="1580474523147">
+    <state width="1294" height="450" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1580643477485" />
+    <state width="1294" height="450" key="GridCell.Tab.2.bottom" timestamp="1580643477485">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="413" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580474523147" />
-    <state width="1294" height="413" key="GridCell.Tab.2.center" timestamp="1580474523147">
+    <state width="1294" height="450" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580643477485" />
+    <state width="1294" height="450" key="GridCell.Tab.2.center" timestamp="1580643477485">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="413" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1580474523147" />
-    <state width="1294" height="413" key="GridCell.Tab.2.left" timestamp="1580474523147">
+    <state width="1294" height="450" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1580643477485" />
+    <state width="1294" height="450" key="GridCell.Tab.2.left" timestamp="1580643477485">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="413" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1580474523147" />
-    <state width="1294" height="413" key="GridCell.Tab.2.right" timestamp="1580474523147">
+    <state width="1294" height="450" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1580643477485" />
+    <state width="1294" height="450" key="GridCell.Tab.2.right" timestamp="1580643477485">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="413" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1580474523147" />
-    <state width="1294" height="413" key="GridCell.Tab.3.bottom" timestamp="1580474523149">
+    <state width="1294" height="450" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1580643477485" />
+    <state width="1294" height="450" key="GridCell.Tab.3.bottom" timestamp="1580643477486">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="413" key="GridCell.Tab.3.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580474523149" />
-    <state width="1294" height="413" key="GridCell.Tab.3.center" timestamp="1580474523148">
+    <state width="1294" height="450" key="GridCell.Tab.3.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580643477486" />
+    <state width="1294" height="450" key="GridCell.Tab.3.center" timestamp="1580643477486">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="413" key="GridCell.Tab.3.center/0.0.1366.728@0.0.1366.728" timestamp="1580474523148" />
-    <state width="1294" height="413" key="GridCell.Tab.3.left" timestamp="1580474523148">
+    <state width="1294" height="450" key="GridCell.Tab.3.center/0.0.1366.728@0.0.1366.728" timestamp="1580643477486" />
+    <state width="1294" height="450" key="GridCell.Tab.3.left" timestamp="1580643477486">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="413" key="GridCell.Tab.3.left/0.0.1366.728@0.0.1366.728" timestamp="1580474523148" />
-    <state width="1294" height="413" key="GridCell.Tab.3.right" timestamp="1580474523148">
+    <state width="1294" height="450" key="GridCell.Tab.3.left/0.0.1366.728@0.0.1366.728" timestamp="1580643477486" />
+    <state width="1294" height="450" key="GridCell.Tab.3.right" timestamp="1580643477486">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="413" key="GridCell.Tab.3.right/0.0.1366.728@0.0.1366.728" timestamp="1580474523148" />
+    <state width="1294" height="450" key="GridCell.Tab.3.right/0.0.1366.728@0.0.1366.728" timestamp="1580643477486" />
     <state x="213" y="19" key="Maven.ArtifactSearchDialog" timestamp="1579857143053">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -382,10 +416,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1580206360552" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1580211499037">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1580475300742">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1580211499037" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1580475300742" />
     <state x="482" y="142" key="chooseDestDirectoryDialog" timestamp="1580029210601">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

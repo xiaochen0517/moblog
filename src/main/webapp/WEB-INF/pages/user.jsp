@@ -9,6 +9,7 @@
         }
     </style>
     <script type="text/javascript">
+        //上一页
         function lastPage(page){
             if (page>0){
                 window.location.href= "${pageContext.request.contextPath}/admin/userpage?page="+page;
@@ -18,6 +19,7 @@
             return null;
         }
 
+        // 下一页
         function afterPage(page) {
             if (page<=${allpage}){
                 window.location.href= "${pageContext.request.contextPath}/admin/userpage?page="+page;
@@ -25,6 +27,13 @@
                 alert("已到最后一页！")
             }
             return null;
+        }
+
+        //跳转到用户详细信息
+        function showUserinfo(userid) {
+            if (userid>0){
+                window.location.href= "${pageContext.request.contextPath}/admin/userinfopage?userid="+userid;
+            }
         }
     </script>
 </head>
@@ -58,12 +67,11 @@
                         <td>${user.email}</td>
                         <td>${user.tel}</td>
                         <td>
-                            <button type="button" class="btn btn-success">查看</button>
+                            <button type="button" class="btn btn-success" onclick="showUserinfo(${user.id})">查看</button>
                             <button type="button" class="btn btn-danger">删除</button>
                         </td>
                     </tr>
                 </c:forEach>
-
                 </tbody>
             </table>
             <nav aria-label="Page navigation">

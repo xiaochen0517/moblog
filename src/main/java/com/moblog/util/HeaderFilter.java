@@ -45,6 +45,7 @@ public class HeaderFilter implements Filter {
                 uri.contains("images") ||
                 uri.contains("fonts") ||
                 uri.contains("login") ||
+                uri.contains("test") ||
                 uri.contains("util")) {
             chain.doFilter(request, response);
         }else{

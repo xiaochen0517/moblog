@@ -1,13 +1,18 @@
 package com.moblog.service.impl;
 
 import com.moblog.dao.AdminDao;
+import com.moblog.domain.Account;
+import com.moblog.domain.Article;
+import com.moblog.domain.admin.ReArticle;
 import com.moblog.domain.admin.ReUser;
 import com.moblog.service.AdminService;
+import com.moblog.util.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -59,5 +64,42 @@ public class AdminServiceImpl implements AdminService {
             pageSize++;
         }
         return new int[]{accountSize, pageSize};
+    }
+
+    @Override
+    public Account getUserinfo(int userid) {
+        Account userinfo = adminDao.findUserinfo(userid);
+        Log.d(TAG, userinfo.toString());
+        return userinfo;
+    }
+
+    @Override
+    public List<ReArticle> getUserArticle(int userid, int page) {
+        List<Article> userArticle = adminDao.findUserArticle(userid, (page - 1) * pageitem);
+        Account account = adminDao.findUserinfo(userid);
+        List<ReArticle> reArticleList = new ArrayList<>();
+        for (Article article: userArticle){
+            ReArticle reArticle = new ReArticle();
+            reArticle.setId(article.getId());
+            reArticle.setNickname(account.getNickname());
+            reArticle.setTitle(article.getTitle());
+            reArticle.setPublisht(article.getPublisht()+"");
+            reArticle.setReviset(article.getReviset()+"");
+            reArticle.setBrowse(article.getBrowse());
+            reArticle.setLike(article.getLike());
+            reArticle.setSortname(adminDao.findSortName(article.getSortid()));
+            reArticle.setLabel(article.getLabel());
+            reArticle.setContent(article.getContent());
+            reArticleList.add(reArticle);
+        }
+        return reArticleList;
+    }
+
+    @Override
+    public int[] getUserArticleSize(int userid) {
+        int userArticleSize = adminDao.findUserArticleSize(userid);
+        int pagesize = userArticleSize/pageitem;
+        if (userArticleSize%pageitem>0) pagesize += 1;
+        return new int[]{userArticleSize, pagesize};
     }
 }

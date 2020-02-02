@@ -1,7 +1,14 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: 28270
+  Date: 2020/2/2
+  Time: 17:53
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>后台管理系统-用户管理</title>
+    <title>后台管理系统-主页</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css"/>
     <style rel="stylesheet">
         .tableBody > tr > td {
@@ -12,7 +19,7 @@
         //上一页
         function lastPage(page){
             if (page>0){
-                window.location.href= "${pageContext.request.contextPath}/admin/userpage?page="+page;
+                window.location.href= "${pageContext.request.contextPath}/admin/articlepage?page="+page+"&userid=${userid}";
             }else{
                 alert("已到第一页！")
             }
@@ -22,50 +29,45 @@
         // 下一页
         function afterPage(page) {
             if (page<=${allpage}){
-                window.location.href= "${pageContext.request.contextPath}/admin/userpage?page="+page;
+                window.location.href= "${pageContext.request.contextPath}/admin/articlepage?page="+page+"&userid=${userid}";
             }else{
                 alert("已到最后一页！")
             }
             return null;
         }
-
-        //跳转到用户详细信息
-        function showUserinfo(userid) {
-            if (userid>0){
-                window.location.href= "${pageContext.request.contextPath}/admin/userinfopage?userid="+userid;
-            }
-        }
     </script>
 </head>
 <body>
-<%@include file="headbar.jsp" %>
+<%@include file="userheadbar.jsp" %>
 <div class="container">
     <div class="row">
         <div class="col-md-2">
-            <%@include file="leftbar.jsp" %>
+            <%@include file="userleftbar.jsp" %>
         </div>
         <div class="col-md-10">
             <table class="table table-hover table-bordered">
                 <thead>
                 <tr>
                     <th>ID</th>
-                    <th>用户名</th>
-                    <th>昵称</th>
-                    <th>地址</th>
-                    <th>email</th>
-                    <th>电话</th>
+                    <th>标题</th>
+                    <th>发布时间</th>
+                    <th>浏览数</th>
+                    <th>点赞数</th>
+                    <th>分类</th>
+                    <th>标签</th>
                     <th></th>
                 </tr>
                 </thead>
                 <tbody class="tableBody">
-                <c:forEach items="${userlist}" var="user" varStatus="i">
+                <c:forEach items="${articles}" var="article" varStatus="i">
                     <tr>
                         <td>${i.count}</td>
-                        <td>${user.username}</td>
-                        <td>${user.nickname}</td>
-                        <td>${user.address}</td>
-                        <td>${user.email}</td>
-                        <td>${user.tel}</td>
+                        <td>${article.title}</td>
+                        <td>${article.publisht}</td>
+                        <td>${article.browse}</td>
+                        <td>${article.like}</td>
+                        <td>${article.sortname}</td>
+                        <td>${article.label}</td>
                         <td>
                             <button type="button" class="btn btn-success" onclick="showUserinfo(${user.id})">查看</button>
                             <button type="button" class="btn btn-danger">删除</button>
@@ -86,7 +88,7 @@
                                 <c:if test="${i == page}">
                                     class="active"
                                 </c:if>
-                        ><a href="${pageContext.request.contextPath}/admin/userpage?page=${i}">${i}</a></li>
+                        ><a href="${pageContext.request.contextPath}/admin/articlepage?page=${i}&userid=${userid}">${i}</a></li>
                     </c:forEach>
                     <li>
                         <a onclick="afterPage(${page+1})" href="#" aria-label="Next">

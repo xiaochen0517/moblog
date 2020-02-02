@@ -1,5 +1,7 @@
 package com.moblog.dao;
 
+import com.moblog.domain.Account;
+import com.moblog.domain.Article;
 import com.moblog.domain.admin.ReUser;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -27,5 +29,20 @@ public interface AdminDao {
 
     @Select("select count(id) from account;")
     int findAccountSize();
+
+    @Select("select * from account where id = #{userid};")
+    Account findUserinfo(int userid);
+
+    @Select("select `id`,`title`,`publisht`,`reviset`,`browse`,`like`,`sortid`,`label`" +
+            " from article " +
+            "where uid = #{userid} " +
+            "limit #{startItem}, 10;")
+    List<Article> findUserArticle(@Param("userid") int userid,@Param("startItem") int startItem);
+
+    @Select("select name from sort where id = #{id};")
+    String findSortName(int id);
+
+    @Select("select count(`id`) from article where uid = #{userid};")
+    int findUserArticleSize(int userid);
 
 }
