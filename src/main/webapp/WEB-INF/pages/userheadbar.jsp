@@ -19,17 +19,17 @@
                         <c:if test="${activeitem == 1}">
                             class="active"
                         </c:if>
-                ><a href="${pageContext.request.contextPath}/admin/userinfopage">用户信息</a></li>
+                ><a href="${pageContext.request.contextPath}/admin/userinfopage?userid=${userid}">用户信息</a></li>
                 <li role="presentation"
                         <c:if test="${activeitem == 2}">
                             class="active"
                         </c:if>
-                ><a href="${pageContext.request.contextPath}/admin/articlepage?page=1&userid=${account.uid}">文章管理</a></li>
+                ><a href="${pageContext.request.contextPath}/admin/articlepage?page=1&userid=${userid}">文章管理</a></li>
             </ul>
             <c:if test="${activeitem == 2}">
                 <form class="navbar-form navbar-right">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="搜索用户名">
+                        <input type="text" class="form-control" placeholder="搜索文章">
                     </div>
                     <button type="submit" class="btn btn-default">搜索</button>
                 </form>

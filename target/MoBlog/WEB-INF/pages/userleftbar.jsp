@@ -6,10 +6,10 @@
             <c:if test="${activeitem == 1}">
                 class="active"
             </c:if>
-    ><a href="${pageContext.request.contextPath}/admin/userinfopage">用户信息</a></li>
+    ><a href="${pageContext.request.contextPath}/admin/userinfopage?userid=${userid}">用户信息</a></li>
     <li role="presentation"
             <c:if test="${activeitem == 2}">
                 class="active"
             </c:if>
-    ><a href="${pageContext.request.contextPath}/admin/articlepage?page=1&userid=${account.uid}">文章管理</a></li>
+    ><a href="${pageContext.request.contextPath}/admin/articlepage?page=1&userid=${userid}">文章管理</a></li>
 </ul>

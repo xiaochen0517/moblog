@@ -7,42 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54bc5f1d-8c27-4b3e-bb0f-a148caa68edf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moblog/domain/admin/ReArticle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/article.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/userheadbar.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/userinfo.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/userleftbar.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/MoBlog/WEB-INF/classes/com/moblog/domain/admin/ReArticle.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/MoBlog/WEB-INF/pages/article.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/MoBlog/WEB-INF/pages/userheadbar.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/MoBlog/WEB-INF/pages/userinfo.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/MoBlog/WEB-INF/pages/userleftbar.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/moblog/domain/admin/ReArticle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/moblog/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moblog/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/moblog/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moblog/controller/TestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/moblog/dao/AdminDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moblog/dao/AdminDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/moblog/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moblog/service/AdminService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/moblog/service/impl/AdminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moblog/service/impl/AdminServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/moblog/util/HeaderFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moblog/util/HeaderFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/test/mybatis/TestOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/test/mybatis/TestOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/userheadbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/userheadbar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/userleftbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/userleftbar.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/MoBlog/WEB-INF/classes/com/moblog/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoBlog/WEB-INF/classes/com/moblog/controller/AdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/MoBlog/WEB-INF/classes/com/moblog/controller/TestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoBlog/WEB-INF/classes/com/moblog/controller/TestController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/MoBlog/WEB-INF/classes/com/moblog/dao/AdminDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoBlog/WEB-INF/classes/com/moblog/dao/AdminDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/MoBlog/WEB-INF/classes/com/moblog/service/AdminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoBlog/WEB-INF/classes/com/moblog/service/AdminService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/MoBlog/WEB-INF/classes/com/moblog/service/impl/AdminServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoBlog/WEB-INF/classes/com/moblog/service/impl/AdminServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/MoBlog/WEB-INF/classes/com/moblog/util/HeaderFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoBlog/WEB-INF/classes/com/moblog/util/HeaderFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/MoBlog/WEB-INF/pages/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoBlog/WEB-INF/pages/home.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/MoBlog/WEB-INF/pages/user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoBlog/WEB-INF/pages/user.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MoBlog/WEB-INF/pages/userheadbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoBlog/WEB-INF/pages/userheadbar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MoBlog/WEB-INF/pages/userleftbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoBlog/WEB-INF/pages/userleftbar.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/moblog/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/moblog/controller/AdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/moblog/controller/TestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/moblog/controller/TestController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/moblog/dao/AdminDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/moblog/dao/AdminDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/moblog/service/AdminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/moblog/service/AdminService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/moblog/service/impl/AdminServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/moblog/service/impl/AdminServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/moblog/util/HeaderFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/moblog/util/HeaderFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/test/mybatis/TestOne.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/test/mybatis/TestOne.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -290,7 +261,7 @@
       <workItem from="1580458876875" duration="8448000" />
       <workItem from="1580468388888" duration="6990000" />
       <workItem from="1580517398994" duration="2404000" />
-      <workItem from="1580636740824" duration="6890000" />
+      <workItem from="1580636740824" duration="7152000" />
     </task>
     <task id="LOCAL-00001" summary="add home page">
       <created>1580211489629</created>
@@ -306,7 +277,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580475291010</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="添加用户详情查看&#10;添加用户文章列表查看">
+      <created>1580643653559</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1580643653560</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -133,6 +133,7 @@ public class AdminController {
         //获取用户信息
         Account userinfo = adminService.getUserinfo(userid);
         modelAndView.addObject("account", userinfo);
+        modelAndView.addObject("userid", userid);
         modelAndView.addObject("activeitem", 1);
         modelAndView.setViewName("userinfo");
         return modelAndView;
