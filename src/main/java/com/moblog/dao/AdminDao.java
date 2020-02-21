@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  * 功能：
- *
+ * 管理员 dao
  * @author MoChen
  * Date  2020/1/26
  * @version 0.1

@@ -18,7 +18,7 @@ import java.util.List;
 
 /**
  * 功能：
- *
+ * 管理员功能
  * @author MoChen
  * Date  2020/1/26
  * @version 0.1
@@ -122,6 +122,11 @@ public class AdminController {
         return modelAndView;
     }
 
+    /**
+     * 获取用户信息
+     * @param userid 用户id
+     * @return
+     */
     @RequestMapping(value = "/userinfopage", method = RequestMethod.GET)
     private ModelAndView userinfoPage(int userid){
         ModelAndView modelAndView = new ModelAndView();

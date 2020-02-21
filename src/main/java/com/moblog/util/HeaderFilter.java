@@ -46,17 +46,18 @@ public class HeaderFilter implements Filter {
                 uri.contains("fonts") ||
                 uri.contains("login") ||
                 uri.contains("test") ||
-                uri.contains("util")) {
+                uri.contains("util") ||
+                uri.contains("/blog/")) {
             chain.doFilter(request, response);
-        }else{
+        } else {
             HttpSession session = request.getSession();
             String username = (String) session.getAttribute("username");
 
-            if (username != null && !username.equals("")){
+            if (username != null && !username.equals("")) {
                 //已登录
-                Log.d(TAG, "用户名-->"+username);
+                Log.d(TAG, "用户名-->" + username);
                 chain.doFilter(request, response);
-            }else{
+            } else {
                 //未登录，跳转到登录页面
                 response.setStatus(302);
                 response.setHeader("location", "/moblog/");

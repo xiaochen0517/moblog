@@ -24,6 +24,12 @@ import java.util.Random;
 @RequestMapping("/util")
 public class UtilController {
 
+    /**
+     * 登录验证码
+     * @param request 请求
+     * @param response 响应返回图片
+     * @throws IOException
+     */
     @RequestMapping("/vcode")
     private void getVCode(HttpServletRequest request, HttpServletResponse response) throws IOException {
         //验证码

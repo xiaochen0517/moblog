@@ -7,13 +7,59 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54bc5f1d-8c27-4b3e-bb0f-a148caa68edf" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/aopalliance-1.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/commons-logging-1.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-aop-5.2.3.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-aspects-5.2.3.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-beans-5.2.3.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-context-5.2.3.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-context-support-5.2.3.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-core-5.2.3.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-expression-5.2.3.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-instrument-5.2.3.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-jdbc-5.2.3.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-jms-5.2.3.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-messaging-5.2.3.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-orm-5.2.3.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-oxm-5.2.3.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-test-5.2.3.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-tx-5.2.3.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/moblog/controller/BlogController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/moblog/dao/BlogDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/moblog/domain/blog/ReArticle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/moblog/domain/blog/ReArticleList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/moblog/service/BlogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/moblog/service/impl/BlogServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/MoBlog/WEB-INF/classes/com/moblog/controller/BlogController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/MoBlog/WEB-INF/classes/com/moblog/dao/BlogDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/MoBlog/WEB-INF/classes/com/moblog/domain/blog/ReArticle.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/MoBlog/WEB-INF/classes/com/moblog/domain/blog/ReArticleList.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/MoBlog/WEB-INF/classes/com/moblog/service/BlogService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/MoBlog/WEB-INF/classes/com/moblog/service/impl/BlogServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/moblog/controller/BlogController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/moblog/dao/BlogDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/moblog/domain/blog/ReArticle.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/moblog/domain/blog/ReArticleList.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/moblog/service/BlogService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/moblog/service/impl/BlogServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/moblog/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moblog/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/userheadbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/userheadbar.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/userleftbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/userleftbar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/moblog/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moblog/controller/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/moblog/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moblog/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/moblog/controller/UtilController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moblog/controller/UtilController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/moblog/dao/AdminDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moblog/dao/AdminDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/moblog/util/HeaderFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moblog/util/HeaderFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/test/mybatis/TestOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/test/mybatis/TestOne.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/MoBlog/WEB-INF/classes/com/moblog/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoBlog/WEB-INF/classes/com/moblog/controller/AdminController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MoBlog/WEB-INF/classes/com/moblog/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoBlog/WEB-INF/classes/com/moblog/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MoBlog/WEB-INF/classes/com/moblog/controller/UtilController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoBlog/WEB-INF/classes/com/moblog/controller/UtilController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MoBlog/WEB-INF/classes/com/moblog/util/HeaderFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoBlog/WEB-INF/classes/com/moblog/util/HeaderFilter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/MoBlog/WEB-INF/pages/userheadbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoBlog/WEB-INF/pages/userheadbar.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/MoBlog/WEB-INF/pages/userleftbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoBlog/WEB-INF/pages/userleftbar.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/moblog/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/moblog/controller/AdminController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/moblog/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/moblog/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/moblog/controller/UtilController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/moblog/controller/UtilController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/moblog/util/HeaderFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/moblog/util/HeaderFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/test/mybatis/TestOne.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/test/mybatis/TestOne.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +70,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="spring-beans.schema" />
-        <option value="Interface" />
         <option value="Jsp File" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -40,6 +86,13 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\AppData\.m2" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="1Wpjyz8ArD9w0qwSewv902aZI7p" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -53,17 +106,17 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -78,22 +131,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.30">
-    <configuration name="TestOne.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="MoBlog" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.test.mybatis.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.test.mybatis" />
-      <option name="MAIN_CLASS_NAME" value="com.test.mybatis.TestOne" />
-      <option name="METHOD_NAME" value="test1" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TestOne.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MoBlog" />
       <extension name="coverage">
@@ -121,6 +158,54 @@
       <option name="PACKAGE_NAME" value="com.test.mybatis" />
       <option name="MAIN_CLASS_NAME" value="com.test.mybatis.TestOne" />
       <option name="METHOD_NAME" value="test3" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestOne.test4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MoBlog" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.test.mybatis.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.test.mybatis" />
+      <option name="MAIN_CLASS_NAME" value="com.test.mybatis.TestOne" />
+      <option name="METHOD_NAME" value="test4" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestOne.test5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MoBlog" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.test.mybatis.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.test.mybatis" />
+      <option name="MAIN_CLASS_NAME" value="com.test.mybatis.TestOne" />
+      <option name="METHOD_NAME" value="test5" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestOne.test6" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MoBlog" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.test.mybatis.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.test.mybatis" />
+      <option name="MAIN_CLASS_NAME" value="com.test.mybatis.TestOne" />
+      <option name="METHOD_NAME" value="test6" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -201,16 +286,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.TestOne.test1" />
       <item itemvalue="JUnit.TestOne.test2" />
-      <item itemvalue="Tomcat Server.Tomcat 9.0.30" />
       <item itemvalue="JUnit.TestOne.test3" />
+      <item itemvalue="JUnit.TestOne.test4" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.30" />
+      <item itemvalue="JUnit.TestOne.test5" />
+      <item itemvalue="JUnit.TestOne.test6" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestOne.test6" />
+        <item itemvalue="JUnit.TestOne.test5" />
+        <item itemvalue="JUnit.TestOne.test4" />
         <item itemvalue="JUnit.TestOne.test3" />
         <item itemvalue="JUnit.TestOne.test2" />
-        <item itemvalue="JUnit.TestOne.test1" />
       </list>
     </recent_temporary>
   </component>
@@ -261,7 +350,12 @@
       <workItem from="1580458876875" duration="8448000" />
       <workItem from="1580468388888" duration="6990000" />
       <workItem from="1580517398994" duration="2404000" />
-      <workItem from="1580636740824" duration="7152000" />
+      <workItem from="1580636740824" duration="7323000" />
+      <workItem from="1580723970626" duration="535000" />
+      <workItem from="1580798872252" duration="377000" />
+      <workItem from="1582080680718" duration="7548000" />
+      <workItem from="1582109489032" duration="620000" />
+      <workItem from="1582251134408" duration="9161000" />
     </task>
     <task id="LOCAL-00001" summary="add home page">
       <created>1580211489629</created>
@@ -284,7 +378,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580643653560</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="修复用户详情页面跳转bug">
+      <created>1580643939146</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1580643939146</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,17 +396,18 @@
     <MESSAGE value="add home page" />
     <MESSAGE value="添加登录密码加密&#10;添加记忆用户名密码功能&#10;修改主页&#10;添加用户管理页" />
     <MESSAGE value="添加用户详情查看&#10;添加用户文章列表查看" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加用户详情查看&#10;添加用户文章列表查看" />
+    <MESSAGE value="修复用户详情页面跳转bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复用户详情页面跳转bug" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580636811428">
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582082090709">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1580636811428" />
-    <state x="488" y="48" key="#com.intellij.ide.util.MemberChooser" timestamp="1580642400767">
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1582082090709" />
+    <state x="488" y="48" key="#com.intellij.ide.util.MemberChooser" timestamp="1582257818630">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="48" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1580642400767" />
+    <state x="488" y="48" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1582257818630" />
     <state x="413" y="140" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1580029216351">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -318,89 +420,101 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1580113087519" />
-    <state x="283" y="0" key="CommitChangelistDialog2" timestamp="1580643646642">
+    <state x="283" y="0" key="CommitChangelistDialog2" timestamp="1580643937141">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="283" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1580643646642" />
-    <state width="1294" height="450" key="GridCell.Tab.0.bottom" timestamp="1580643477485">
+    <state x="283" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1580643937141" />
+    <state x="462" y="105" key="FileChooserDialogImpl" timestamp="1582081764878">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="450" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580643477485" />
-    <state width="1294" height="450" key="GridCell.Tab.0.center" timestamp="1580643477485">
+    <state x="462" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1582081764878" />
+    <state width="1294" height="440" key="GridCell.Tab.0.bottom" timestamp="1582264539411">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="450" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1580643477485" />
-    <state width="1294" height="450" key="GridCell.Tab.0.left" timestamp="1580643477485">
+    <state width="1294" height="440" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1582264539411" />
+    <state width="1294" height="440" key="GridCell.Tab.0.center" timestamp="1582264539410">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="450" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1580643477485" />
-    <state width="1294" height="450" key="GridCell.Tab.0.right" timestamp="1580643477485">
+    <state width="1294" height="440" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1582264539410" />
+    <state width="1294" height="440" key="GridCell.Tab.0.left" timestamp="1582264539410">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="450" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1580643477485" />
-    <state width="1294" height="450" key="GridCell.Tab.1.bottom" timestamp="1580643477485">
+    <state width="1294" height="440" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1582264539410" />
+    <state width="1294" height="440" key="GridCell.Tab.0.right" timestamp="1582264539411">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="450" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580643477485" />
-    <state width="1294" height="450" key="GridCell.Tab.1.center" timestamp="1580643477485">
+    <state width="1294" height="440" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1582264539411" />
+    <state width="1294" height="440" key="GridCell.Tab.1.bottom" timestamp="1582264539411">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="450" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1580643477485" />
-    <state width="1294" height="450" key="GridCell.Tab.1.left" timestamp="1580643477485">
+    <state width="1294" height="440" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1582264539411" />
+    <state width="1294" height="440" key="GridCell.Tab.1.center" timestamp="1582264539411">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="450" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1580643477485" />
-    <state width="1294" height="450" key="GridCell.Tab.1.right" timestamp="1580643477485">
+    <state width="1294" height="440" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1582264539411" />
+    <state width="1294" height="440" key="GridCell.Tab.1.left" timestamp="1582264539411">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="450" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1580643477485" />
-    <state width="1294" height="450" key="GridCell.Tab.2.bottom" timestamp="1580643477485">
+    <state width="1294" height="440" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1582264539411" />
+    <state width="1294" height="440" key="GridCell.Tab.1.right" timestamp="1582264539411">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="450" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580643477485" />
-    <state width="1294" height="450" key="GridCell.Tab.2.center" timestamp="1580643477485">
+    <state width="1294" height="440" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1582264539411" />
+    <state width="1294" height="440" key="GridCell.Tab.2.bottom" timestamp="1582264539412">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="450" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1580643477485" />
-    <state width="1294" height="450" key="GridCell.Tab.2.left" timestamp="1580643477485">
+    <state width="1294" height="440" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1582264539412" />
+    <state width="1294" height="440" key="GridCell.Tab.2.center" timestamp="1582264539412">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="450" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1580643477485" />
-    <state width="1294" height="450" key="GridCell.Tab.2.right" timestamp="1580643477485">
+    <state width="1294" height="440" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1582264539412" />
+    <state width="1294" height="440" key="GridCell.Tab.2.left" timestamp="1582264539411">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="450" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1580643477485" />
-    <state width="1294" height="450" key="GridCell.Tab.3.bottom" timestamp="1580643477486">
+    <state width="1294" height="440" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1582264539411" />
+    <state width="1294" height="440" key="GridCell.Tab.2.right" timestamp="1582264539412">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="450" key="GridCell.Tab.3.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580643477486" />
-    <state width="1294" height="450" key="GridCell.Tab.3.center" timestamp="1580643477486">
+    <state width="1294" height="440" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1582264539412" />
+    <state width="1294" height="450" key="GridCell.Tab.3.bottom" timestamp="1580644080665">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="450" key="GridCell.Tab.3.center/0.0.1366.728@0.0.1366.728" timestamp="1580643477486" />
-    <state width="1294" height="450" key="GridCell.Tab.3.left" timestamp="1580643477486">
+    <state width="1294" height="450" key="GridCell.Tab.3.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580644080665" />
+    <state width="1294" height="450" key="GridCell.Tab.3.center" timestamp="1580644080664">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="450" key="GridCell.Tab.3.left/0.0.1366.728@0.0.1366.728" timestamp="1580643477486" />
-    <state width="1294" height="450" key="GridCell.Tab.3.right" timestamp="1580643477486">
+    <state width="1294" height="450" key="GridCell.Tab.3.center/0.0.1366.728@0.0.1366.728" timestamp="1580644080664" />
+    <state width="1294" height="450" key="GridCell.Tab.3.left" timestamp="1580644080664">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1294" height="450" key="GridCell.Tab.3.right/0.0.1366.728@0.0.1366.728" timestamp="1580643477486" />
-    <state x="213" y="19" key="Maven.ArtifactSearchDialog" timestamp="1579857143053">
+    <state width="1294" height="450" key="GridCell.Tab.3.left/0.0.1366.728@0.0.1366.728" timestamp="1580644080664" />
+    <state width="1294" height="450" key="GridCell.Tab.3.right" timestamp="1580644080664">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="213" y="19" key="Maven.ArtifactSearchDialog/0.0.1366.728@0.0.1366.728" timestamp="1579857143053" />
-    <state x="163" y="0" key="SettingsEditor" timestamp="1580206360552">
+    <state width="1294" height="450" key="GridCell.Tab.3.right/0.0.1366.728@0.0.1366.728" timestamp="1580644080664" />
+    <state x="213" y="19" key="Maven.ArtifactSearchDialog" timestamp="1582081543895">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1580206360552" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1580475300742">
+    <state x="213" y="19" key="Maven.ArtifactSearchDialog/0.0.1366.728@0.0.1366.728" timestamp="1582081543895" />
+    <state x="163" y="0" key="SettingsEditor" timestamp="1582081770350">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1580475300742" />
+    <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1582081770350" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1580643943217">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1580643943217" />
     <state x="482" y="142" key="chooseDestDirectoryDialog" timestamp="1580029210601">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="482" y="142" key="chooseDestDirectoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1580029210601" />
+    <state x="57" y="59" key="new project wizard" timestamp="1580799249497">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="57" y="59" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1580799249497" />
+    <state x="363" y="47" key="spring file set editor" timestamp="1582081613152">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="363" y="47" key="spring file set editor/0.0.1366.728@0.0.1366.728" timestamp="1582081613152" />
   </component>
 </project>

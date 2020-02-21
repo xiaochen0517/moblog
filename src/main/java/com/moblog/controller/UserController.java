@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * 功能：
- *
+ * 用户登录控制类
  * @author MoChen
  * Date  2020/1/24
  * @version 0.1
@@ -18,6 +18,7 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
 
     @RequestMapping("/findall")
     @ResponseBody
