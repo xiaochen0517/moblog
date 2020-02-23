@@ -28,4 +28,17 @@ public interface BlogService {
      */
     String article(int id);
 
+    /**
+     * 获取文章推荐
+     * @return
+     */
+    String recommend();
+
+    /**
+     * 获取文章评论
+     * @param aid
+     * @return
+     */
+    String comment(int aid, int page);
+
 }

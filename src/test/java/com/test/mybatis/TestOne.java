@@ -8,6 +8,7 @@ import com.moblog.domain.User;
 import com.moblog.domain.admin.ReArticle;
 import com.moblog.domain.admin.ReUser;
 import com.moblog.domain.blog.ReArticleList;
+import com.moblog.util.SystemUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -82,6 +83,16 @@ public class TestOne {
     public void test6(){
         com.moblog.domain.blog.ReArticle reArticleLists = blogDao.findArticle(1);
         System.out.println(reArticleLists);
+    }
+
+    @Test
+    public void test7(){
+        System.out.println(userDao.findUserStatuss("lxc1")+"ss");
+    }
+
+    @Test
+    public void test8(){
+        System.out.println(userDao.insertComment(1, 1, SystemUtil.getNowTime(), "测试文字", true));
     }
 
 }

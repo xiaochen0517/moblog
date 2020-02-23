@@ -1,10 +1,15 @@
 package com.moblog.util;
 
+import com.alibaba.fastjson.JSONObject;
+
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 功能：
@@ -45,6 +50,7 @@ public class HeaderFilter implements Filter {
                 uri.contains("images") ||
                 uri.contains("fonts") ||
                 uri.contains("login") ||
+                uri.contains("register") ||
                 uri.contains("test") ||
                 uri.contains("util") ||
                 uri.contains("/blog/")) {
@@ -58,6 +64,15 @@ public class HeaderFilter implements Filter {
                 Log.d(TAG, "用户名-->" + username);
                 chain.doFilter(request, response);
             } else {
+                if(uri.contains("/blog/") ||
+                        uri.contains("/user/")){
+                    response.setHeader("content-type", "text/html;charset=UTF-8");
+                    PrintWriter out = response.getWriter();
+                    Map<String, Object> map = new HashMap<>();
+                    map.put("status", 499);
+                    out.print(JSONObject.toJSONString(map));
+                    return;
+                }
                 //未登录，跳转到登录页面
                 response.setStatus(302);
                 response.setHeader("location", "/moblog/");

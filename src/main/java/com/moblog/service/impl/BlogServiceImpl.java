@@ -4,6 +4,8 @@ import com.alibaba.fastjson.JSONObject;
 import com.moblog.dao.BlogDao;
 import com.moblog.domain.blog.ReArticle;
 import com.moblog.domain.blog.ReArticleList;
+import com.moblog.domain.blog.ReComment;
+import com.moblog.domain.blog.Recommend;
 import com.moblog.service.BlogService;
 import com.moblog.util.Log;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,21 +29,31 @@ public class BlogServiceImpl implements BlogService {
 
     private final static int pageSize = 10;
 
+    private final static String status = "status";
+
     @Autowired
     private BlogDao blogDao;
 
+
     @Override
     public String homePageArticle(int page) {
+        Map<String, Object> jsonMap = new HashMap<>();
         //计算页数
         int pageStart = (page - 1) * pageSize;
-        //获取数据
-        List<ReArticleList> reArticleLists = blogDao.findHomePageArticle(pageStart, pageSize);
         //获取文章条数
         int articleSize = blogDao.findAllArticleSize();
+        //判断是否有数据
+        if (articleSize < 1) {
+            // 无数据
+            jsonMap.put("status", 200);
+            jsonMap.put("articlesize", 0);
+            return JSONObject.toJSONString(jsonMap);
+        }
+        //获取数据
+        List<ReArticleList> reArticleLists = blogDao.findHomePageArticle(pageStart, pageSize);
         //计算页面数量
         int pageSizes = (articleSize / pageSize) + (articleSize % pageSize > 0 ? 1 : 0);
         //包装json
-        Map<String, Object> jsonMap = new HashMap<>();
         jsonMap.put("status", 200);
         jsonMap.put("articlesize", articleSize);
         jsonMap.put("pagesize", pageSizes);
@@ -64,7 +76,7 @@ public class BlogServiceImpl implements BlogService {
         }
         //进行查找
         int searchSize = blogDao.findSearchArticleSize(keyword);
-        if (searchSize <= 0){
+        if (searchSize <= 0) {
             //查询不到数据
             map.put("status", 200);
             map.put("articlesize", 0);
@@ -72,7 +84,7 @@ public class BlogServiceImpl implements BlogService {
         }
         //查询有数据
         //计算分页
-        int start = (page-1)*pageSize;
+        int start = (page - 1) * pageSize;
         List<ReArticleList> reArticleLists = blogDao.findSearchArticle(keyword, start, pageSize);
         int pageSizes = (searchSize / pageSize) + (searchSize % pageSize > 0 ? 1 : 0);
         map.put("status", 200);
@@ -80,7 +92,7 @@ public class BlogServiceImpl implements BlogService {
         map.put("pagesize", pageSizes);
         map.put("articlelist", reArticleLists);
         String jsonstr = JSONObject.toJSONString(map);
-        Log.d(TAG, "jsonstr --> "+jsonstr);
+        Log.d(TAG, "jsonstr --> " + jsonstr);
         return jsonstr;
     }
 
@@ -88,22 +100,75 @@ public class BlogServiceImpl implements BlogService {
     public String article(int id) {
         Map<String, Object> map = new HashMap<>();
         //判断参数
-        if (id < 1){
+        if (id < 1) {
             map.put("status", 404);
             return JSONObject.toJSONString(map);
         }
         //获取数据
         ReArticle reArticle = blogDao.findArticle(id);
-        if (reArticle == null || reArticle.getTitle().equals("")){
+        if (reArticle == null || reArticle.getTitle().equals("")) {
             //没有数据
             map.put("status", 405);
             return JSONObject.toJSONString(map);
         }
+        //将文章浏览量加1
+        int returns = blogDao.addArticleBrowse(id);
+        Log.d(TAG, "文章id-->" + id + "  浏览量-->" + returns);
+        reArticle.setBrowse(reArticle.getBrowse() + 1);
         //返回数据
         map.put("status", 200);
         map.put("article", reArticle);
         String jsonstr = JSONObject.toJSONString(map);
         Log.d(TAG, jsonstr);
         return jsonstr;
+    }
+
+    @Override
+    public String recommend() {
+        Map<String, Object> map = new HashMap<>();
+        List<Recommend> lists = blogDao.findRecommend();
+        if (lists == null || lists.size() < 1) {
+            map.put("status", 404);
+            return JSONObject.toJSONString(map);
+        }
+        map.put("status", 200);
+        map.put("lists", lists);
+        String jsonstr = JSONObject.toJSONString(map);
+        Log.d(TAG, "jsonstr --> " + jsonstr);
+        return jsonstr;
+    }
+
+    @Override
+    public String comment(int aid, int page) {
+        Map<String, Object> map = new HashMap<>();
+        // 检查数据
+        if (aid < 1) {
+            map.put(status, 404);
+            return JSONObject.toJSONString(map);
+        }
+        if (page < 1) {
+            map.put(status, 405);
+            return JSONObject.toJSONString(map);
+        }
+        // 计算页数
+        int start = (page - 1) * pageSize;
+        // 查询评论总数
+        int commentSize = blogDao.findArticleReCommentSize(aid);
+        if (commentSize == 0){
+            // 无评论
+            map.put(status, 200);
+            map.put("commentsize", 0);
+            return JSONObject.toJSONString(map);
+        }
+        // 查询
+        List<ReComment> articleReComment = blogDao.findArticleReComment(aid, start, pageSize);
+        // 返回数据
+        map.put(status, 200);
+        map.put("commentsize", commentSize);
+        map.put("pagesize", (commentSize / pageSize) + (commentSize % pageSize > 0 ? 1 : 0));
+        map.put("comment", articleReComment);
+        String jsonStr = JSONObject.toJSONString(map);
+        Log.d(TAG, "jsonstr-->"+jsonStr);
+        return jsonStr;
     }
 }

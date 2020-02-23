@@ -61,4 +61,25 @@ public class BlogController {
     private String article(int id){
         return blogService.article(id);
     }
+
+    /**
+     * 获取推荐列表
+     * @return
+     */
+    @RequestMapping(value = "/recommend", method = RequestMethod.GET)
+    @ResponseBody
+    private String recommend(){
+        return blogService.recommend();
+    }
+
+    /**
+     * 获取文章评论
+     * @param aid 文章id
+     * @return
+     */
+    @RequestMapping(value = "/comment", method = RequestMethod.GET)
+    @ResponseBody
+    private String comment(int aid, int page){
+        return blogService.comment(aid, page);
+    }
 }

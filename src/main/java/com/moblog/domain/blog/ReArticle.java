@@ -1,7 +1,5 @@
 package com.moblog.domain.blog;
 
-import java.sql.Date;
-
 /**
  * 功能：
  *
@@ -14,7 +12,7 @@ public class ReArticle {
     private int id;
     private String username;
     private String title;
-    private Date publisht;
+    private String publisht;
     private int browse;
     private int like;
     private String sort;
@@ -60,11 +58,11 @@ public class ReArticle {
         this.title = title;
     }
 
-    public Date getPublisht() {
+    public String getPublisht() {
         return publisht;
     }
 
-    public void setPublisht(Date publisht) {
+    public void setPublisht(String publisht) {
         this.publisht = publisht;
     }
 

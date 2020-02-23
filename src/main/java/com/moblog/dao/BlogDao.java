@@ -2,8 +2,11 @@ package com.moblog.dao;
 
 import com.moblog.domain.blog.ReArticle;
 import com.moblog.domain.blog.ReArticleList;
+import com.moblog.domain.blog.ReComment;
+import com.moblog.domain.blog.Recommend;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 
@@ -71,5 +74,38 @@ public interface BlogDao {
             "where a.id = #{id};")
     ReArticle findArticle(int id);
 
+    /**
+     * 将置顶文章的浏览量加1
+     * @param id
+     * @return
+     */
+    @Update("update article set browse = browse + 1 where id = #{id};")
+    int addArticleBrowse(int id);
 
+    /**
+     * 获取文章推荐
+     * @return
+     */
+    @Select("select id, title from article order by browse limit 0, 5;")
+    List<Recommend> findRecommend();
+
+    /**
+     * 获取指定文章评论数量
+     * @param aid
+     * @return
+     */
+    @Select("select count(id) from comment where aid = #{aid} ;")
+    int findArticleReCommentSize(int aid);
+
+    /**
+     * 获取指定文章评论
+     * @param aid
+     * @param start
+     * @param size
+     * @return
+     */
+    @Select("select c.id,u.username,c.content,c.time from comment c " +
+            "inner join user u on c.uid = u.id " +
+            "where c.aid = #{aid} order by c.time desc limit #{start}, #{size};")
+    List<ReComment> findArticleReComment(@Param("aid") int aid,@Param("start") int start,@Param("size") int size);
 }
