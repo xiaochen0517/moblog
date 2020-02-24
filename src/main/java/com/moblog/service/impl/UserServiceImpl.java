@@ -2,15 +2,21 @@ package com.moblog.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
 import com.moblog.dao.UserDao;
+import com.moblog.domain.Sort;
 import com.moblog.domain.User;
 import com.moblog.service.UserService;
 import com.moblog.util.Log;
 import com.moblog.util.SystemUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
+import java.io.File;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -57,7 +63,7 @@ public class UserServiceImpl implements UserService {
             session.setAttribute("username", username);
             // 获取用户状态
             System.out.println(userDao.findUserStatuss(username));
-            if (userDao.findUserStatuss(username)){
+            if (userDao.findUserStatuss(username)) {
                 map.put("adminstatus", true);
             }
             //返回数据
@@ -142,18 +148,18 @@ public class UserServiceImpl implements UserService {
         Map<String, Object> map = new HashMap<>();
         // 判断上传数据格式
         HttpSession session = request.getSession();
-        if (!session.getAttribute("username").equals(username)){
+        if (!session.getAttribute("username").equals(username)) {
             map.put(status, 404);
             return JSONObject.toJSONString(map);
-        }else if(content.equals("") || content.length() < 5){
+        } else if (content.equals("") || content.length() < 5) {
             map.put(status, 405);
             return JSONObject.toJSONString(map);
-        }else if (aid < 1){
+        } else if (aid < 1) {
             map.put(status, 406);
             return JSONObject.toJSONString(map);
         }
         // 判断文章是否存在
-        if (userDao.findArticleExist(aid) != 1){
+        if (userDao.findArticleExist(aid) != 1) {
             // 文章不存在
             map.put(status, 407);
             return JSONObject.toJSONString(map);
@@ -162,12 +168,226 @@ public class UserServiceImpl implements UserService {
         int userId = userDao.findUserId(username);
         // 写入数据
         int reComment = userDao.insertComment(userId, aid, SystemUtil.getNowTime(), content, true);
-        if (reComment != 1){
+        if (reComment != 1) {
             // 写入错误
             map.put(status, 408);
             return JSONObject.toJSONString(map);
         }
         // 成功写入数据
+        map.put(status, 200);
+        return JSONObject.toJSONString(map);
+    }
+
+    @Override
+    public String articleLike(String username, int aid, HttpServletRequest request) {
+        Map<String, Object> map = new HashMap<>();
+        // 判断上传数据格式
+        HttpSession session = request.getSession();
+        if (!session.getAttribute("username").equals(username)) {
+            map.put(status, 404);
+            return JSONObject.toJSONString(map);
+        } else if (aid < 1) {
+            map.put(status, 405);
+            return JSONObject.toJSONString(map);
+        }
+        // 判断文章是否存在
+        if (userDao.findArticleExist(aid) != 1) {
+            // 文章不存在
+            map.put(status, 406);
+            return JSONObject.toJSONString(map);
+        }
+        // 获取uid
+        int uid = userDao.findUserId(username);
+        // 查询是否已经点赞
+        if (userDao.findRepetLike(uid, aid) > 0) {
+            map.put(status, 407);
+            return JSONObject.toJSONString(map);
+        }
+        // 添加数据
+        int reLike = userDao.insertLike(uid, aid, SystemUtil.getNowTime());
+        if (reLike != 1) {
+            // 点赞失败
+            map.put(status, 408);
+            return JSONObject.toJSONString(map);
+        }
+        // 点赞成功
+        map.put(status, 200);
+        return JSONObject.toJSONString(map);
+    }
+
+    @Override
+    public String logout(HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        String username = (String) session.getAttribute("username");
+        if (username != null) {
+            session.removeAttribute("username");
+        }
+        return "{\"status\": 200}";
+    }
+
+    @Override
+    public String uploadArticlePhoto(MultipartFile imageFile, HttpServletRequest request, HttpServletResponse response) {
+        Map<String, Object> map = new HashMap<>();
+        try {
+            if (imageFile == null) {
+                map.put(status, 404);
+                return JSONObject.toJSONString(map);
+            }
+            // 获取用户名
+            HttpSession session = request.getSession();
+            String username = (String) session.getAttribute("username");
+            // 获取服务器的实际路径
+            String realPath = request.getSession().getServletContext().getRealPath("/");
+            // 上传的路径
+            String resourcePath = "images/upload/" + username;
+            //文件名
+            String name = imageFile.getOriginalFilename();
+            // 转换后的文件名
+            String filename = SystemUtil.getRandomName(name);
+            File dir = new File(realPath + resourcePath);
+            if (!dir.exists()) {
+                dir.mkdirs();
+            }
+            //用户上传原图保存到服务器
+            File file = new File(dir, filename);
+            imageFile.transferTo(file);
+            if (file.exists()) {
+                // 上传文件成功
+                map.put(status, 200);
+                map.put("url", "http://127.0.0.1:8080/moblog/"+resourcePath+"/"+filename);
+                return JSONObject.toJSONString(map);
+            }
+            map.put(status, 405);
+            return JSONObject.toJSONString(map);
+        } catch (Exception e) {
+            e.printStackTrace();
+            map.put(status, 406);
+            return JSONObject.toJSONString(map);
+        }
+    }
+
+    @Override
+    public String delArticlePhoto(String fileName, HttpServletRequest request) {
+        Map<String, Object> map = new HashMap<>();
+        Log.d(TAG, fileName);
+        //判断数据
+        if (fileName == null || fileName.length() < 32){
+            map.put(status, 404);
+            return JSONObject.toJSONString(map);
+        }
+        // 获取用户名
+        HttpSession session = request.getSession();
+        String username = (String) session.getAttribute("username");
+        // 获取服务器的实际路径
+        String realPath = request.getSession().getServletContext().getRealPath("/");
+        // 上传的路径
+        String resourcePath = "images/upload/" + username;
+        // 文件名
+        String filename = SystemUtil.getFileName(fileName);
+        // 开始删除文件
+        File file = new File(realPath+resourcePath,filename);
+        if (file.exists()) {
+            file.delete();
+            System.out.println("文件删除-->"+file.getName());
+            map.put(status, 200);
+            return JSONObject.toJSONString(map);
+        }
+        map.put(status, 405);
+        return JSONObject.toJSONString(map);
+    }
+
+    @Override
+    public String addArticle(String username, String title, int sortid, String label, String content, HttpServletRequest request) {
+        Map<String, Object> map = new HashMap<>();
+        //判断数据
+        if (username == null || username.equals("")){
+            map.put(status, 404);
+            return JSONObject.toJSONString(map);
+        }else if (title == null || title.equals("")){
+            map.put(status, 405);
+            return JSONObject.toJSONString(map);
+        }else if (sortid < 1){
+            map.put(status, 406);
+            return JSONObject.toJSONString(map);
+        }else if (label == null || label.equals("")){
+            map.put(status, 407);
+            return JSONObject.toJSONString(map);
+        }else if (content == null || content.equals("")){
+            map.put(status, 408);
+            return JSONObject.toJSONString(map);
+        }
+        // 获取用户名
+        int uid = userDao.findUserId(username);
+        if (uid < 1){
+            // 获取错误
+            map.put(status, 409);
+            return JSONObject.toJSONString(map);
+        }
+        // 写入数据
+        String time = SystemUtil.getNowTime();
+        int restatus = userDao.insertArticle(uid,title,time,time,sortid,label,content);
+        if (restatus != 1){
+            // 写入失败
+            map.put(status, 410);
+            return JSONObject.toJSONString(map);
+        }
+        // 成功写入
+        map.put(status, 200);
+        return JSONObject.toJSONString(map);
+    }
+
+    @Override
+    public String getUserSort(String username, HttpServletRequest request) {
+        Map<String, Object> map = new HashMap<>();
+        //判断数据
+        if (username == null || username.equals("")){
+            map.put(status, 404);
+            return JSONObject.toJSONString(map);
+        }
+        // 获取uid
+        int uid = userDao.findUserId(username);
+        if (uid < 1){
+            // 获取错误
+            map.put(status, 405);
+            return JSONObject.toJSONString(map);
+        }
+        // 获取数据
+        List<Sort> userSort = userDao.findUserSort(uid);
+        if (userSort == null || userSort.size() < 1){
+            map.put(status, 406);
+            return JSONObject.toJSONString(map);
+        }
+        // 成功获取
+        map.put(status, 200);
+        map.put("sorts", userSort);
+        return JSONObject.toJSONString(map);
+    }
+
+    @Override
+    public String addUserSort(String username, String name, HttpServletRequest request) {
+        Map<String, Object> map = new HashMap<>();
+        //判断数据
+        if (username == null || username.equals("")){
+            map.put(status, 404);
+            return JSONObject.toJSONString(map);
+        }else if (name == null || name.equals("")){
+            map.put(status, 405);
+            return JSONObject.toJSONString(map);
+        }
+        // 获取uid
+        int uid = userDao.findUserId(username);
+        if (uid < 1){
+            // 获取错误
+            map.put(status, 406);
+            return JSONObject.toJSONString(map);
+        }
+        // 插入数据
+        int restatus = userDao.insertUserSort(uid, name);
+        if (restatus != 1){
+            map.put(status, 407);
+            return JSONObject.toJSONString(map);
+        }
+        // 成功获取
         map.put(status, 200);
         return JSONObject.toJSONString(map);
     }

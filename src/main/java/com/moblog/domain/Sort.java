@@ -12,6 +12,7 @@ import java.io.Serializable;
 public class Sort implements Serializable {
 
     private int id;
+    private int uid;
     private String name;
     private boolean defsort;
 
@@ -19,9 +20,18 @@ public class Sort implements Serializable {
     public String toString() {
         return "Sort{" +
                 "id=" + id +
+                ", uid=" + uid +
                 ", name='" + name + '\'' +
                 ", defsort=" + defsort +
                 '}';
+    }
+
+    public int getUid() {
+        return uid;
+    }
+
+    public void setUid(int uid) {
+        this.uid = uid;
     }
 
     public int getId() {

@@ -22,6 +22,7 @@ public class Article implements Serializable {
     private int sortid;
     private String label;
     private String content;
+    private boolean status;
 
     @Override
     public String toString() {
@@ -36,6 +37,7 @@ public class Article implements Serializable {
                 ", sortid=" + sortid +
                 ", label='" + label + '\'' +
                 ", content='" + content + '\'' +
+                ", status=" + status +
                 '}';
     }
 
@@ -117,5 +119,13 @@ public class Article implements Serializable {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 }

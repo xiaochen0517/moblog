@@ -1,6 +1,9 @@
 package com.moblog.service;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * 功能：
@@ -42,4 +45,63 @@ public interface UserService {
      */
     String comment(String username, String content, int aid, HttpServletRequest request);
 
+    /**
+     * 文章点赞接口
+     * @param username
+     * @param aid
+     * @param request
+     * @return
+     */
+    String articleLike(String username, int aid, HttpServletRequest request);
+
+    /**
+     * 注销接口
+     * @param request
+     * @return
+     */
+    String logout(HttpServletRequest request);
+
+    /**
+     * 上传文章图片
+     * @param imageFile
+     * @param request
+     * @param response
+     * @return
+     */
+    String uploadArticlePhoto(MultipartFile imageFile, HttpServletRequest request, HttpServletResponse response);
+
+    /**
+     * 删除博客中的图片
+     * @param fileName
+     * @return
+     */
+    String delArticlePhoto(String fileName, HttpServletRequest request);
+
+    /**
+     * 上传文章
+     * @param username
+     * @param title
+     * @param sortid
+     * @param label
+     * @param content
+     * @param request
+     * @return
+     */
+    String addArticle(String username, String title, int sortid, String label, String content, HttpServletRequest request);
+
+    /**
+     * 获取用户分类
+     * @param username
+     * @param request
+     */
+    String getUserSort(String username, HttpServletRequest request);
+
+    /**
+     * 添加用户分类
+     * @param username
+     * @param name
+     * @param request
+     * @return
+     */
+    String addUserSort(String username, String name, HttpServletRequest request);
 }

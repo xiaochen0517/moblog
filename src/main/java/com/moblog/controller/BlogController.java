@@ -82,4 +82,5 @@ public class BlogController {
     private String comment(int aid, int page){
         return blogService.comment(aid, page);
     }
+
 }

@@ -26,9 +26,12 @@ public interface BlogDao {
      * @param size
      * @return
      */
-    @Select("select a.id,u.username,a.title,a.publisht,a.browse,a.like,s.name sort,a.label from " +
-            "(article a inner join `user` u on u.id = a.uid) " +
-            "inner join sort s on s.id = a.sortid order by a.publisht desc limit #{start}, #{size};")
+    @Select("select a.id,u.nickname username,a.title,a.publisht,a.browse,ifnull(al.`like`, 0) `like`,s.name sort,a.label from article a " +
+            "left join account u on u.uid = a.uid " +
+            "left join " +
+            "(select count(`like`.id) `like`, article.id id from article, `like` where `like`.aid = article.id) al on a.id = al.id " +
+            "left join sort s on s.id = a.sortid " +
+            "order by a.publisht desc limit #{start}, #{size};")
     List<ReArticleList> findHomePageArticle(@Param("start") int start, @Param("size") int size);
 
     /**
@@ -47,9 +50,11 @@ public interface BlogDao {
      * @param size    条数
      * @return
      */
-    @Select("select a.id,u.username,a.title,a.publisht,a.browse,a.like,s.name sort,a.label from " +
-            "(article a inner join `user` u on u.id = a.uid) " +
-            "inner join sort s on s.id = a.sortid " +
+    @Select("select a.id,u.nickname username,a.title,a.publisht,a.browse,ifnull(al.`like`, 0) `like`,s.name sort,a.label from article a " +
+            "left join account u on u.uid = a.uid " +
+            "left join " +
+            "(select count(`like`.id) `like`, article.id id from article, `like` where `like`.aid = article.id) al on a.id = al.id " +
+            "left join sort s on s.id = a.sortid " +
             "where a.title like '%${keyword}%' " +
             "order by a.publisht desc limit #{start}, #{size};")
     List<ReArticleList> findSearchArticle(@Param("keyword") String keyword, @Param("start") int start, @Param("size") int size);
@@ -68,9 +73,11 @@ public interface BlogDao {
      * @param id 文章id
      * @return
      */
-    @Select("select a.id,u.username,a.title,a.publisht,a.browse,a.like,s.name sort,a.label,a.content from " +
-            "(article a inner join `user` u on u.id = a.uid) " +
-            "inner join sort s on s.id = a.sortid " +
+    @Select("select a.id,u.nickname username,a.title,a.publisht,a.browse,ifnull(al.`like`, 0) `like`,s.name sort,a.label,a.content from article a " +
+            "left join account u on u.uid = a.uid " +
+            "left join " +
+            "(select count(`like`.id) `like`, article.id id from article, `like` where `like`.aid = article.id) al on a.id = al.id " +
+            "left join sort s on s.id = a.sortid " +
             "where a.id = #{id};")
     ReArticle findArticle(int id);
 

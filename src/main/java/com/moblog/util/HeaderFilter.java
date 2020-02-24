@@ -45,14 +45,14 @@ public class HeaderFilter implements Filter {
         Log.d(TAG, "访问uri-->" + uri);
         if (uri.contains("index") ||
                 uri.equalsIgnoreCase("/moblog/") ||
-                uri.contains("css") ||
-                uri.contains("js") ||
-                uri.contains("images") ||
-                uri.contains("fonts") ||
-                uri.contains("login") ||
-                uri.contains("register") ||
-                uri.contains("test") ||
-                uri.contains("util") ||
+                uri.contains("/css") ||
+                uri.contains("/js") ||
+                uri.contains("/images") ||
+                uri.contains("/fonts") ||
+                (uri.contains("/login") && !uri.equalsIgnoreCase("/moblog/user/loginstatus")) ||
+                uri.contains("/register") ||
+                uri.contains("/test") ||
+                uri.contains("/util") ||
                 uri.contains("/blog/")) {
             chain.doFilter(request, response);
         } else {
