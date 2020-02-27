@@ -182,4 +182,50 @@ public class UserController {
         return userService.addUserSort(username, name, request);
     }
 
+    /**
+     * 添加友链
+     * @param name
+     * @param link
+     * @return
+     */
+    @RequestMapping(value = "/addblogroll", method = RequestMethod.POST)
+    @ResponseBody
+    private String addBlogRoll(String name, String link){
+        return userService.addBlogRoll(name, link);
+    }
+
+    /**
+     *
+     * @param id
+     * @param name
+     * @param link
+     * @return
+     */
+    @RequestMapping(value = "/editblogroll", method = RequestMethod.POST)
+    @ResponseBody
+    private String editBlogRoll(int id, String name, String link){
+        return userService.editBlogRoll(id, name, link);
+    }
+
+    /**
+     * 删除友链
+     * @param id
+     * @return
+     */
+    @RequestMapping(value = "/delblogroll", method = RequestMethod.POST)
+    @ResponseBody
+    private String delBlogRoll(int id){
+        return userService.delBlogRoll(id);
+    }
+
+    /**
+     * 获取已登录用户信息
+     * @param request
+     * @return
+     */
+    @RequestMapping(value = "/getuserinfo", method = RequestMethod.GET)
+    @ResponseBody
+    private String getUserInfo(HttpServletRequest request){
+        return userService.getUserInfo(request);
+    }
 }

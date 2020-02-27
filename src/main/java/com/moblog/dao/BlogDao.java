@@ -1,5 +1,7 @@
 package com.moblog.dao;
 
+import com.moblog.domain.Blogroll;
+import com.moblog.domain.HomePhoto;
 import com.moblog.domain.blog.ReArticle;
 import com.moblog.domain.blog.ReArticleList;
 import com.moblog.domain.blog.ReComment;
@@ -115,4 +117,47 @@ public interface BlogDao {
             "inner join user u on c.uid = u.id " +
             "where c.aid = #{aid} order by c.time desc limit #{start}, #{size};")
     List<ReComment> findArticleReComment(@Param("aid") int aid,@Param("start") int start,@Param("size") int size);
+
+    /**
+     * 获取友链
+     * @return
+     */
+    @Select("select * from blogroll;")
+    List<Blogroll> findBlogRoll();
+
+    /**
+     * 获取友链数量
+     * @return
+     */
+    @Select("select count(id) from blogroll;")
+    int findBlogRollSize();
+
+    /**
+     * 获取备案信息
+     * @return
+     */
+    @Select("select records from settings where id = 1")
+    String findRecords();
+
+    /**
+     * 获取轮播图
+     * @return
+     */
+    @Select("select * from homephoto")
+    List<HomePhoto> findHomePhotos();
+
+    /**
+     * 获取介绍头像
+     * @return
+     */
+    @Select("select perphoto from settings where id = 1;")
+    String findPerPhoto();
+
+    /**
+     * 获取介绍内容
+     * @return
+     */
+    @Select("select percontent from settings where id = 1;")
+    String findPerContent();
+
 }

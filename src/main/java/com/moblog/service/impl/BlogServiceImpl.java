@@ -2,10 +2,9 @@ package com.moblog.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
 import com.moblog.dao.BlogDao;
-import com.moblog.domain.blog.ReArticle;
-import com.moblog.domain.blog.ReArticleList;
-import com.moblog.domain.blog.ReComment;
-import com.moblog.domain.blog.Recommend;
+import com.moblog.domain.Blogroll;
+import com.moblog.domain.HomePhoto;
+import com.moblog.domain.blog.*;
 import com.moblog.service.BlogService;
 import com.moblog.util.Log;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -154,7 +153,7 @@ public class BlogServiceImpl implements BlogService {
         int start = (page - 1) * pageSize;
         // 查询评论总数
         int commentSize = blogDao.findArticleReCommentSize(aid);
-        if (commentSize == 0){
+        if (commentSize == 0) {
             // 无评论
             map.put(status, 200);
             map.put("commentsize", 0);
@@ -168,7 +167,76 @@ public class BlogServiceImpl implements BlogService {
         map.put("pagesize", (commentSize / pageSize) + (commentSize % pageSize > 0 ? 1 : 0));
         map.put("comment", articleReComment);
         String jsonStr = JSONObject.toJSONString(map);
-        Log.d(TAG, "jsonstr-->"+jsonStr);
+        Log.d(TAG, "jsonstr-->" + jsonStr);
         return jsonStr;
+    }
+
+    @Override
+    public String blogRoll() {
+        Map<String, Object> map = new HashMap<>();
+        // 获取友链数据
+        int blogRollSize = blogDao.findBlogRollSize();
+        if (blogRollSize < 1) {
+            map.put(status, 404);
+            return JSONObject.toJSONString(map);
+        }
+        // 获取友链
+        List<Blogroll> blogRoll = blogDao.findBlogRoll();
+        map.put(status, 200);
+        map.put("blogrollsize", blogRollSize);
+        map.put("blogrolls", blogRoll);
+        String jsonstr = JSONObject.toJSONString(map);
+        Log.d(TAG, "jsonstr-->" + jsonstr);
+        return jsonstr;
+    }
+
+    @Override
+    public String records() {
+        Map<String, Object> map = new HashMap<>();
+        // 获取备案数据
+        String records = blogDao.findRecords();
+        if (records == null){
+            records = "";
+        }
+        map.put(status, 200);
+        map.put("records", records);
+        String jsonstr = JSONObject.toJSONString(map);
+        Log.d(TAG, "jsonstr-->" + jsonstr);
+        return jsonstr;
+    }
+
+    @Override
+    public String homePhotos() {
+        Map<String, Object> map = new HashMap<>();
+        // 获取备案数据
+        List<HomePhoto> homePhotos = blogDao.findHomePhotos();
+        if (homePhotos.size() < 1){
+            map.put(status, 404);
+            return JSONObject.toJSONString(map);
+        }
+        map.put(status, 200);
+        map.put("homephotosize", homePhotos.size());
+        map.put("homephotos", homePhotos);
+        String jsonstr = JSONObject.toJSONString(map);
+        Log.d(TAG, "jsonstr-->" + jsonstr);
+        return jsonstr;
+    }
+
+    @Override
+    public String perMsg() {
+        RePerMsg rePerMsg = new RePerMsg();
+        // 获取数据
+        String perPhoto = blogDao.findPerPhoto();
+        String perContent = blogDao.findPerContent();
+        if (perPhoto == null || perContent == null){
+            rePerMsg.setStatus(404);
+            return JSONObject.toJSONString(rePerMsg);
+        }
+        rePerMsg.setStatus(200);
+        rePerMsg.setPerphoto(perPhoto);
+        rePerMsg.setPercontent(perContent);
+        String jsonstr = JSONObject.toJSONString(rePerMsg);
+        Log.d(TAG, "jsonstr-->" + jsonstr);
+        return jsonstr;
     }
 }

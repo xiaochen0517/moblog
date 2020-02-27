@@ -83,4 +83,44 @@ public class BlogController {
         return blogService.comment(aid, page);
     }
 
+    /**
+     * 获取友链
+     * @return
+     */
+    @RequestMapping(value = "/blogroll", method = RequestMethod.GET)
+    @ResponseBody
+    private String blogRoll(){
+        return blogService.blogRoll();
+    }
+
+    /**
+     * 获取备案号
+     * @return
+     */
+    @RequestMapping(value = "/records", method = RequestMethod.GET)
+    @ResponseBody
+    private String records(){
+        return blogService.records();
+    }
+
+    /**
+     * 获取轮播图
+     * @return
+     */
+    @RequestMapping(value = "/homephotos", method = RequestMethod.GET)
+    @ResponseBody
+    private String homePhotos(){
+        return blogService.homePhotos();
+    }
+
+    /**
+     * 获取介绍信息
+     * @return
+     */
+    @RequestMapping(value = "/permsg", method = RequestMethod.GET)
+    @ResponseBody
+    private String perMsg(){
+        return blogService.perMsg();
+    }
+
 }

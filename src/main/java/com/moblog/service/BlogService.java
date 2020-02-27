@@ -41,4 +41,28 @@ public interface BlogService {
      */
     String comment(int aid, int page);
 
+    /**
+     * 获取友链
+     * @return
+     */
+    String blogRoll();
+
+    /**
+     * 获取备案号
+     * @return
+     */
+    String records();
+
+    /**
+     * 获取轮播图
+     * @return
+     */
+    String homePhotos();
+
+    /**
+     * 获取介绍信息
+     * @return
+     */
+    String perMsg();
+
 }

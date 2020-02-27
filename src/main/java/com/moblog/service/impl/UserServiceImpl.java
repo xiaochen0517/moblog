@@ -2,6 +2,7 @@ package com.moblog.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
 import com.moblog.dao.UserDao;
+import com.moblog.domain.Account;
 import com.moblog.domain.Sort;
 import com.moblog.domain.User;
 import com.moblog.service.UserService;
@@ -391,4 +392,97 @@ public class UserServiceImpl implements UserService {
         map.put(status, 200);
         return JSONObject.toJSONString(map);
     }
+
+    @Override
+    public String addBlogRoll(String name, String link) {
+        Map<String, Object> map = new HashMap<>();
+        // 判断数据
+        if (name == null || name.equals("")){
+            map.put(status, 404);
+            return JSONObject.toJSONString(map);
+        }
+        if (link == null || link.equals("")){
+            map.put(status, 405);
+            return JSONObject.toJSONString(map);
+        }
+        // 添加友链
+        int restatus = userDao.insertBlogRoll(name, link);
+        if (restatus != 1){
+            // 添加失败
+            map.put(status, 406);
+            return JSONObject.toJSONString(map);
+        }
+        // 添加成功
+        map.put(status, 200);
+        return JSONObject.toJSONString(map);
+    }
+
+    @Override
+    public String editBlogRoll(int id, String name, String link) {
+        Map<String, Object> map = new HashMap<>();
+        // 判断数据
+        if (id < 1){
+            map.put(status, 404);
+            return JSONObject.toJSONString(map);
+        }
+        if (name == null || name.equals("")){
+            map.put(status, 405);
+            return JSONObject.toJSONString(map);
+        }
+        if (link == null || link.equals("")){
+            map.put(status, 406);
+            return JSONObject.toJSONString(map);
+        }
+        // 修改友链
+        int restatus = userDao.updateBlogRoll(id, name, link);
+        if (restatus != 1){
+            // 修改失败
+            map.put(status, 407);
+            return JSONObject.toJSONString(map);
+        }
+        // 修改成功
+        map.put(status, 200);
+        return JSONObject.toJSONString(map);
+    }
+
+    @Override
+    public String delBlogRoll(int id) {
+        Map<String, Object> map = new HashMap<>();
+        // 判断数据
+        if (id < 1){
+            map.put(status, 404);
+            return JSONObject.toJSONString(map);
+        }
+        // 删除友链
+        int restatus = userDao.delBlogRoll(id);
+        if (restatus != 1){
+            // 删除失败
+            map.put(status, 407);
+            return JSONObject.toJSONString(map);
+        }
+        // 删除成功
+        map.put(status, 200);
+        return JSONObject.toJSONString(map);
+    }
+
+    @Override
+    public String getUserInfo(HttpServletRequest request) {
+        Map<String, Object> map = new HashMap<>();
+        // 获取用户名
+        HttpSession session = request.getSession();
+        String username = (String) session.getAttribute("username");
+        int userId = userDao.findUserId(username);
+        Account userInfo = userDao.findUserInfo(userId);
+        if (userInfo == null || userInfo.getNickname().equals("")){
+            // 获取到的数据为空
+            map.put(status, 404);
+            return JSONObject.toJSONString(map);
+        }
+        map.put(status, 200);
+        map.put("userinfo", userInfo);
+        String jsonstr = JSONObject.toJSONString(map);
+        Log.d(TAG, "jsonstr -->"+jsonstr);
+        return jsonstr;
+    }
+
 }

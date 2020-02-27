@@ -1,5 +1,7 @@
 package com.moblog.dao;
 
+import com.moblog.domain.Account;
+import com.moblog.domain.Blogroll;
 import com.moblog.domain.Sort;
 import com.moblog.domain.User;
 import org.apache.ibatis.annotations.*;
@@ -212,4 +214,35 @@ public interface UserDao {
      */
     @Insert("insert into sort (uid, name, defsort) values (#{uid}, #{name}, false)")
     int insertUserSort(@Param("uid") int uid,@Param("name") String name);
+
+    /**
+     * 添加友链
+     * @param name
+     * @param link
+     * @return
+     */
+    @Insert("insert into blogroll (name, link) values (#{name}, #{link});")
+    int insertBlogRoll(@Param("name") String name,@Param("link") String link);
+
+    /**
+     * 修改友链
+     * @param id
+     * @param name
+     * @param link
+     * @return
+     */
+    @Update("update blogroll set name = #{name}, link = #{link} where id = #{id}")
+    int updateBlogRoll(@Param("id") int id,@Param("name") String name,@Param("link") String link);
+
+    /**
+     * 删除友链
+     * @param id
+     * @return
+     */
+    @Delete("delete from blogroll where id = #{id};")
+    int delBlogRoll(int id);
+
+    @Select("select * from account where uid = #{uid};")
+    Account findUserInfo(int uid);
+
 }

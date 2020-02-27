@@ -104,4 +104,35 @@ public interface UserService {
      * @return
      */
     String addUserSort(String username, String name, HttpServletRequest request);
+
+    /**
+     * 添加友链
+     * @param name
+     * @param link
+     * @return
+     */
+    String addBlogRoll(String name, String link);
+
+    /**
+     *
+     * @param id
+     * @param name
+     * @param link
+     * @return
+     */
+    String editBlogRoll(int id, String name, String link);
+
+    /**
+     * 删除友链
+     * @param id
+     * @return
+     */
+    String delBlogRoll(int id);
+
+    /**
+     * 获取登录用户信息
+     * @param request
+     * @return
+     */
+    String getUserInfo(HttpServletRequest request);
 }
