@@ -111,7 +111,7 @@ public interface UserService {
      * @param link
      * @return
      */
-    String addBlogRoll(String name, String link);
+    String addBlogRoll(String name, String link, HttpServletRequest request);
 
     /**
      *
@@ -120,14 +120,14 @@ public interface UserService {
      * @param link
      * @return
      */
-    String editBlogRoll(int id, String name, String link);
+    String editBlogRoll(int id, String name, String link, HttpServletRequest request);
 
     /**
      * 删除友链
      * @param id
      * @return
      */
-    String delBlogRoll(int id);
+    String delBlogRoll(int id, HttpServletRequest request);
 
     /**
      * 获取登录用户信息
@@ -135,4 +135,71 @@ public interface UserService {
      * @return
      */
     String getUserInfo(HttpServletRequest request);
+
+    /**
+     * 编辑轮播图
+     * @param id
+     * @param name
+     * @param link
+     * @param request
+     * @return
+     */
+    String editHomePhoto(int id, String name, String link, HttpServletRequest request);
+
+    /**
+     * 添加轮播图
+     * @param name
+     * @param link
+     * @param request
+     * @return
+     */
+    String addHomePhoto(String name, String link, HttpServletRequest request);
+
+    /**
+     * 删除轮播图
+     * @param id
+     * @param request
+     * @return
+     */
+    String delHomePhoto(int id, HttpServletRequest request);
+
+    /**
+     * 修改昵称
+     * @param nickname
+     * @param request
+     * @return
+     */
+    String editNickName(String nickname, HttpServletRequest request);
+
+    /**
+     * 修改地址
+     * @param address
+     * @param request
+     * @return
+     */
+    String editAddress(String address, HttpServletRequest request);
+
+    /**
+     * 修改邮箱
+     * @param email
+     * @param request
+     * @return
+     */
+    String editEmail(String email, HttpServletRequest request);
+
+    /**
+     * 修改电话号码
+     * @param tel
+     * @param request
+     * @return
+     */
+    String editTel(String tel, HttpServletRequest request);
+
+    /**
+     * 修改介绍
+     * @param introduce
+     * @param request
+     * @return
+     */
+    String editIntroduce(String introduce, HttpServletRequest request);
 }

@@ -4,6 +4,7 @@ import com.moblog.domain.Account;
 import com.moblog.domain.Blogroll;
 import com.moblog.domain.Sort;
 import com.moblog.domain.User;
+import com.moblog.domain.user.ReAccount;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
@@ -242,7 +243,110 @@ public interface UserDao {
     @Delete("delete from blogroll where id = #{id};")
     int delBlogRoll(int id);
 
-    @Select("select * from account where uid = #{uid};")
-    Account findUserInfo(int uid);
+    /**
+     * 获取用户信息
+     * @param uid
+     * @return
+     */
+    @Select("select a.*, u.username from account a " +
+            "inner join user u on u.id = a.uid " +
+            "where a.uid = #{uid};")
+    ReAccount findUserInfo(int uid);
+
+    /**
+     * 修改轮播图
+     * @param id
+     * @param name
+     * @param link
+     * @return
+     */
+    @Update("update homephoto set name = #{name}, link = #{link} where id = #{id}")
+    int updateHomePhoto(@Param("id") int id,@Param("name") String name,@Param("link") String link);
+
+    /**
+     * 添加轮播图
+     * @param name
+     * @param link
+     * @return
+     */
+    @Insert("insert into homephoto (name, link) values (#{name}, #{link});")
+    int insertHomePhoto(@Param("name") String name,@Param("link") String link);
+
+    /**
+     * 删除轮播图
+     * @param id
+     * @return
+     */
+    @Delete("delete from homephoto where id = #{id};")
+    int delHomePhoto(int id);
+
+    /**
+     * 查询是否有重复的昵称
+     * @param nickname
+     * @return
+     */
+    @Select("select count(id) from account where nickname = #{nickname};")
+    int findNicknameRepeat(String nickname);
+
+    /**
+     * 修改昵称
+     * @param uid
+     * @param nickname
+     * @return
+     */
+    @Update("update account set nickname = #{nickname} where uid = #{uid}")
+    int updateNickname(@Param("uid") int uid,@Param("nickname") String nickname);
+
+    /**
+     * 修改地址
+     * @param uid
+     * @param address
+     * @return
+     */
+    @Update("update account set address = #{address} where uid = #{uid}")
+    int updateAddress(@Param("uid") int uid,@Param("address") String address);
+
+    /**
+     * 查询是否有重复的邮箱
+     * @param email
+     * @return
+     */
+    @Select("select count(id) from account where email = #{email};")
+    int findEmailRepeat(String email);
+
+    /**
+     * 修改邮箱
+     * @param uid
+     * @param email
+     * @return
+     */
+    @Update("update account set email = #{email} where uid = #{uid}")
+    int updateEmail(@Param("uid") int uid,@Param("email") String email);
+
+    /**
+     * 查询电话号码是否重复
+     * @param tel
+     * @return
+     */
+    @Select("select count(id) from account where tel = #{tel};")
+    int findTelRepeat(String tel);
+
+    /**
+     * 修改电话号码
+     * @param uid
+     * @param tel
+     * @return
+     */
+    @Update("update account set tel = #{tel} where uid = #{uid}")
+    int updateTel(@Param("uid") int uid,@Param("tel") String tel);
+
+    /**
+     * 编辑介绍
+     * @param uid
+     * @param introduce
+     * @return
+     */
+    @Update("update account set introduce = #{introduce} where uid = #{uid}")
+    int updateIntroduce(@Param("uid") int uid,@Param("introduce") String introduce);
 
 }

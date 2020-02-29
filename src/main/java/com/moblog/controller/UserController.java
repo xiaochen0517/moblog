@@ -190,12 +190,12 @@ public class UserController {
      */
     @RequestMapping(value = "/addblogroll", method = RequestMethod.POST)
     @ResponseBody
-    private String addBlogRoll(String name, String link){
-        return userService.addBlogRoll(name, link);
+    private String addBlogRoll(String name, String link, HttpServletRequest request){
+        return userService.addBlogRoll(name, link, request);
     }
 
     /**
-     *
+     * 修改友链
      * @param id
      * @param name
      * @param link
@@ -203,8 +203,8 @@ public class UserController {
      */
     @RequestMapping(value = "/editblogroll", method = RequestMethod.POST)
     @ResponseBody
-    private String editBlogRoll(int id, String name, String link){
-        return userService.editBlogRoll(id, name, link);
+    private String editBlogRoll(int id, String name, String link, HttpServletRequest request){
+        return userService.editBlogRoll(id, name, link, request);
     }
 
     /**
@@ -214,8 +214,8 @@ public class UserController {
      */
     @RequestMapping(value = "/delblogroll", method = RequestMethod.POST)
     @ResponseBody
-    private String delBlogRoll(int id){
-        return userService.delBlogRoll(id);
+    private String delBlogRoll(int id, HttpServletRequest request){
+        return userService.delBlogRoll(id, request);
     }
 
     /**
@@ -228,4 +228,101 @@ public class UserController {
     private String getUserInfo(HttpServletRequest request){
         return userService.getUserInfo(request);
     }
+
+    /**
+     * 修改轮播图
+     * @param id
+     * @param name
+     * @param link
+     * @return
+     */
+    @RequestMapping(value = "/edithomephoto", method = RequestMethod.POST)
+    @ResponseBody
+    private String editHomePhoto(int id, String name, String link, HttpServletRequest request){
+        return userService.editHomePhoto(id, name, link, request);
+    }
+
+    /**
+     * 添加轮播图
+     * @param name
+     * @param link
+     * @return
+     */
+    @RequestMapping(value = "/addhomephoto", method = RequestMethod.POST)
+    @ResponseBody
+    private String addHomePhoto(String name, String link, HttpServletRequest request){
+        return userService.addHomePhoto(name, link, request);
+    }
+
+    /**
+     * 删除主页轮播图
+     * @param id
+     * @return
+     */
+    @RequestMapping(value = "/delhomephoto", method = RequestMethod.POST)
+    @ResponseBody
+    private String delHomtPhoto(int id, HttpServletRequest request){
+        return userService.delHomePhoto(id, request);
+    }
+
+    /**
+     * 修改用户名
+     * @param nickname
+     * @param request
+     * @return
+     */
+    @RequestMapping(value = "/editnickname", method = RequestMethod.POST)
+    @ResponseBody
+    private String editNickName(String nickname, HttpServletRequest request){
+        return userService.editNickName(nickname, request);
+    }
+
+    /**
+     * 修改地址信息
+     * @param address
+     * @param request
+     * @return
+     */
+    @RequestMapping(value = "/editaddress", method = RequestMethod.POST)
+    @ResponseBody
+    private String editAddress(String address, HttpServletRequest request){
+        return userService.editAddress(address, request);
+    }
+
+    /**
+     * 编辑邮箱
+     * @param email
+     * @param request
+     * @return
+     */
+    @RequestMapping(value = "/editemail", method = RequestMethod.POST)
+    @ResponseBody
+    private String editEmail(String email, HttpServletRequest request){
+        return userService.editEmail(email, request);
+    }
+
+    /**
+     * 编辑电话
+     * @param tel
+     * @param request
+     * @return
+     */
+    @RequestMapping(value = "/edittel", method = RequestMethod.POST)
+    @ResponseBody
+    private String editTel(String tel, HttpServletRequest request){
+        return userService.editTel(tel, request);
+    }
+
+    /**
+     * 编辑介绍
+     * @param introduce
+     * @param request
+     * @return
+     */
+    @RequestMapping(value = "/editintroduce", method = RequestMethod.POST)
+    @ResponseBody
+    private String editIntroduce(String introduce, HttpServletRequest request){
+        return userService.editIntroduce(introduce, request);
+    }
+
 }
