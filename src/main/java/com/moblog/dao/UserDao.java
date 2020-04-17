@@ -4,6 +4,7 @@ import com.moblog.domain.Account;
 import com.moblog.domain.Blogroll;
 import com.moblog.domain.Sort;
 import com.moblog.domain.User;
+import com.moblog.domain.blog.ReArticleList;
 import com.moblog.domain.user.ReAccount;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
@@ -348,5 +349,54 @@ public interface UserDao {
      */
     @Update("update account set introduce = #{introduce} where uid = #{uid}")
     int updateIntroduce(@Param("uid") int uid,@Param("introduce") String introduce);
+
+    /**
+     * 修改介绍图片
+     * @param perphoto
+     * @return
+     */
+    @Update("update settings set perphoto = #{perphoto} where id = 1;")
+    int updatePerPhoto(String perphoto);
+
+    /**
+     * 修改介绍内容
+     * @param percontent
+     * @return
+     */
+    @Update("update settings set percontent = #{percontent} where id = 1;")
+    int updatePerContent(String percontent);
+
+    /**
+     * 获取指定用户文章
+     * @param uid
+     * @param start
+     * @param size
+     * @return
+     */
+    @Select("select a.id,u.nickname username,a.title,a.publisht,a.browse,ifnull(al.`like`, 0) `like`,s.name sort,a.label,a.status from article a " +
+            "left join account u on u.uid = a.uid " +
+            "left join " +
+            "(select count(`like`.id) `like`, article.id id from article, `like` where `like`.aid = article.id) al on a.id = al.id " +
+            "left join sort s on s.id = a.sortid " +
+            "where a.uid = #{uid} " +
+            "order by a.publisht desc limit #{start}, #{size};")
+    List<ReArticleList> findUserArticle(@Param("uid") int uid,@Param("start") int start, @Param("size") int size);
+
+    /**
+     * 获取用户文章数量
+     * @param uid
+     * @return
+     */
+    @Select("select count(id) from article where uid = #{uid};")
+    int findUserArticleSize(int uid);
+
+    @Update("update article set title = #{title}, reviset = #{reviset}, sortid = #{sortid}, label = #{label}, content = #{content} " +
+            "where id = #{aid} and uid = #{uid};")
+    int updateUserArticle(@Param("aid") int aid, @Param("uid") int uid,@Param("title") String title,
+                          @Param("reviset") String reviset,@Param("sortid") int sortid,
+                          @Param("label") String label,@Param("content") String content);
+
+    @Delete("delete from article where id = #{aid} and uid = #{uid};")
+    int delUserArticle(@Param("aid") int aid, @Param("uid") int uid);
 
 }

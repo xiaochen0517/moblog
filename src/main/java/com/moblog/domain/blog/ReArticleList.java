@@ -17,6 +17,7 @@ public class ReArticleList {
     private int like;
     private String sort;
     private String label;
+    private boolean status;
 
     @Override
     public String toString() {
@@ -24,11 +25,12 @@ public class ReArticleList {
                 "id=" + id +
                 ", username='" + username + '\'' +
                 ", title='" + title + '\'' +
-                ", publisht=" + publisht +
+                ", publisht='" + publisht + '\'' +
                 ", browse=" + browse +
                 ", like=" + like +
                 ", sort='" + sort + '\'' +
                 ", label='" + label + '\'' +
+                ", status=" + status +
                 '}';
     }
 
@@ -94,5 +96,13 @@ public class ReArticleList {
 
     public void setLabel(String label) {
         this.label = label;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 }

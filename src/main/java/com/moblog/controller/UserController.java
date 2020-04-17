@@ -325,4 +325,67 @@ public class UserController {
         return userService.editIntroduce(introduce, request);
     }
 
+    /**
+     * 修改介绍图片
+     * @param photo
+     * @param request
+     * @return
+     */
+    @RequestMapping(value = "/editperphoto", method = RequestMethod.POST)
+    @ResponseBody
+    private String editPerPhoto(String photo, HttpServletRequest request){
+        return userService.editPerPhoto(photo, request);
+    }
+
+    /**
+     * 编辑介绍内容
+     * @param percontent
+     * @param request
+     * @return
+     */
+    @RequestMapping(value = "/editpercontent", method = RequestMethod.POST)
+    @ResponseBody
+    private String editPerContent(String percontent, HttpServletRequest request){
+        return userService.editPerContent(percontent, request);
+    }
+
+    /**
+     * 获取用户文章列表
+     * @param page
+     * @param request
+     * @return
+     */
+    @RequestMapping(value = "/getuserarticle", method = RequestMethod.GET)
+    @ResponseBody
+    private String getUserArticle(int page, HttpServletRequest request){
+        return userService.getUserArticle(page, request);
+    }
+
+    /**
+     * 编辑用户文章
+     * @param id
+     * @param title
+     * @param sortid
+     * @param label
+     * @param content
+     * @param request
+     * @return
+     */
+    @RequestMapping(value = "/edituserarticle", method = RequestMethod.POST)
+    @ResponseBody
+    private String editUserArticle(int id, String title, int sortid, String label, String content, HttpServletRequest request){
+        return userService.editUserArticle(id, title, sortid, label, content, request);
+    }
+
+    /**
+     * 删除用户文章
+     * @param id
+     * @param request
+     * @return
+     */
+    @RequestMapping(value = "/deluserarticle", method = RequestMethod.POST)
+    @ResponseBody
+    private String delUserArticle(int id, HttpServletRequest request){
+        return userService.delUserArticle(id, request);
+    }
 }

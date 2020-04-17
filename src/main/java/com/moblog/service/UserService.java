@@ -202,4 +202,47 @@ public interface UserService {
      * @return
      */
     String editIntroduce(String introduce, HttpServletRequest request);
+
+    /**
+     * 修改介绍图片
+     * @param photo
+     * @param request
+     * @return
+     */
+    String editPerPhoto(String photo, HttpServletRequest request);
+
+    /**
+     * 修改介绍内容
+     * @param percontent
+     * @param request
+     * @return
+     */
+    String editPerContent(String percontent, HttpServletRequest request);
+
+    /**
+     * 获取用户文章
+     * @param request
+     * @return
+     */
+    String getUserArticle(int page, HttpServletRequest request);
+
+    /**
+     * 修改用户文章
+     * @param id
+     * @param title
+     * @param sortid
+     * @param label
+     * @param content
+     * @param request
+     * @return
+     */
+    String editUserArticle(int id, String title, int sortid, String label, String content, HttpServletRequest request);
+
+    /**
+     * 删除用户文章
+     * @param id
+     * @param request
+     * @return
+     */
+    String delUserArticle(int id, HttpServletRequest request);
 }

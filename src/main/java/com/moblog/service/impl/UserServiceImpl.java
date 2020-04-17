@@ -5,6 +5,7 @@ import com.moblog.dao.UserDao;
 import com.moblog.domain.Account;
 import com.moblog.domain.Sort;
 import com.moblog.domain.User;
+import com.moblog.domain.blog.ReArticleList;
 import com.moblog.domain.user.ReAccount;
 import com.moblog.service.UserService;
 import com.moblog.util.Log;
@@ -37,6 +38,8 @@ public class UserServiceImpl implements UserService {
     private static final String TAG = "UserServiceImpl";
 
     private static final String status = "status";
+
+    private static final int pageSize = 10;
 
     private static final String emailRegEx = "^([a-z0-9A-Z]+[-|\\.]?)+[a-z0-9A-Z]@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\\.)+[a-zA-Z]{2,}$";
 
@@ -731,6 +734,160 @@ public class UserServiceImpl implements UserService {
             map.put(status, 407);
             return JSONObject.toJSONString(map);
         }
+        map.put(status, 200);
+        return JSONObject.toJSONString(map);
+    }
+
+    @Override
+    public String editPerPhoto(String photo, HttpServletRequest request) {
+        Map<String, Object> map = new HashMap<>();
+        // 检查数据
+        if (!UserUtil.checkUserPermission(userDao, request)) {
+            map.put(status, 498);
+            return JSONObject.toJSONString(map);
+        }
+        if (photo == null || photo.length() < 1) {
+            map.put(status, 404);
+            return JSONObject.toJSONString(map);
+        }
+        int i = userDao.updatePerPhoto(photo);
+        if (i != 1) {
+            map.put(status, 407);
+            return JSONObject.toJSONString(map);
+        }
+        map.put(status, 200);
+        return JSONObject.toJSONString(map);
+    }
+
+    @Override
+    public String editPerContent(String percontent, HttpServletRequest request) {
+        Map<String, Object> map = new HashMap<>();
+        // 检查数据
+        if (!UserUtil.checkUserPermission(userDao, request)) {
+            map.put(status, 498);
+            return JSONObject.toJSONString(map);
+        }
+        if (percontent == null || percontent.length() < 1) {
+            map.put(status, 404);
+            return JSONObject.toJSONString(map);
+        }
+        int i = userDao.updatePerContent(percontent);
+        if (i != 1) {
+            map.put(status, 407);
+            return JSONObject.toJSONString(map);
+        }
+        map.put(status, 200);
+        return JSONObject.toJSONString(map);
+    }
+
+    @Override
+    public String getUserArticle(int page, HttpServletRequest request) {
+        Map<String, Object> map = new HashMap<>();
+        // 判断数据
+        if (page < 1) {
+            map.put(status, 404);
+            return JSONObject.toJSONString(map);
+        }
+        // 获取uid
+        HttpSession session = request.getSession();
+        String username = (String) session.getAttribute("username");
+        int uid = userDao.findUserId(username);
+        //计算页数
+        int pageStart = (page - 1) * pageSize;
+        //获取文章条数
+        int articleSize = userDao.findUserArticleSize(uid);
+        //判断是否有数据
+        if (articleSize < 1) {
+            // 无数据
+            map.put("status", 200);
+            map.put("articlesize", 0);
+            return JSONObject.toJSONString(map);
+        }
+        //获取数据
+        List<ReArticleList> reArticleLists = userDao.findUserArticle(uid, pageStart, pageSize);
+        //计算页面数量
+        int pageSizes = (articleSize / pageSize) + (articleSize % pageSize > 0 ? 1 : 0);
+        //包装json
+        map.put("status", 200);
+        map.put("articlesize", articleSize);
+        map.put("pagesize", pageSizes);
+        map.put("articlelist", reArticleLists);
+
+        String jsonStr = JSONObject.toJSONString(map);
+        Log.d(TAG, "jsonstr --> " + jsonStr);
+
+        return jsonStr;
+    }
+
+    @Override
+    public String editUserArticle(int id, String title, int sortid, String label, String content, HttpServletRequest request) {
+        Map<String, Object> map = new HashMap<>();
+        // 获取username
+        HttpSession session = request.getSession();
+        String username = (String) session.getAttribute("username");
+        //判断数据
+        if (id < 1) {
+            map.put(status, 404);
+            return JSONObject.toJSONString(map);
+        } else if (title == null || title.equals("")) {
+            map.put(status, 405);
+            return JSONObject.toJSONString(map);
+        } else if (sortid < 1) {
+            map.put(status, 406);
+            return JSONObject.toJSONString(map);
+        } else if (label == null || label.equals("")) {
+            map.put(status, 407);
+            return JSONObject.toJSONString(map);
+        } else if (content == null || content.equals("")) {
+            map.put(status, 408);
+            return JSONObject.toJSONString(map);
+        }
+        // 获取uid
+        int uid = userDao.findUserId(username);
+        if (uid < 1) {
+            // 获取错误
+            map.put(status, 409);
+            return JSONObject.toJSONString(map);
+        }
+        // 写入数据
+        String time = SystemUtil.getNowTime();
+        int restatus = userDao.updateUserArticle(id, uid, title, time, sortid, label, content);
+        if (restatus != 1) {
+            // 写入失败
+            map.put(status, 410);
+            return JSONObject.toJSONString(map);
+        }
+        // 成功写入
+        map.put(status, 200);
+        return JSONObject.toJSONString(map);
+    }
+
+    @Override
+    public String delUserArticle(int id, HttpServletRequest request) {
+        Map<String, Object> map = new HashMap<>();
+        // 获取username
+        HttpSession session = request.getSession();
+        String username = (String) session.getAttribute("username");
+        //判断数据
+        if (id < 1) {
+            map.put(status, 404);
+            return JSONObject.toJSONString(map);
+        }
+        // 获取uid
+        int uid = userDao.findUserId(username);
+        if (uid < 1) {
+            // 获取错误
+            map.put(status, 409);
+            return JSONObject.toJSONString(map);
+        }
+        // 删除数据
+        int restatus = userDao.delUserArticle(id, uid);
+        if (restatus != 1) {
+            // 写入失败
+            map.put(status, 410);
+            return JSONObject.toJSONString(map);
+        }
+        // 成功删除
         map.put(status, 200);
         return JSONObject.toJSONString(map);
     }
