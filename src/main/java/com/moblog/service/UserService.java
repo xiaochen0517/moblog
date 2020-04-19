@@ -106,6 +106,23 @@ public interface UserService {
     String addUserSort(String username, String name, HttpServletRequest request);
 
     /**
+     * 删除用户分类
+     * @param id
+     * @param request
+     * @return
+     */
+    String delUserSort(int id, HttpServletRequest request);
+
+    /**
+     * 编辑用户分类名
+     * @param id
+     * @param name
+     * @param request
+     * @return
+     */
+    String editUserSort(int id, String name, HttpServletRequest request);
+
+    /**
      * 添加友链
      * @param name
      * @param link

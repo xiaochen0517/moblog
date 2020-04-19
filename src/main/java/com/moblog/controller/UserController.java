@@ -183,6 +183,31 @@ public class UserController {
     }
 
     /**
+     * 删除指定分类
+     * @param id
+     * @param request
+     * @return
+     */
+    @RequestMapping(value = "/delsort", method = RequestMethod.POST)
+    @ResponseBody
+    private String delUserSort(int id, HttpServletRequest request){
+        return userService.delUserSort(id, request);
+    }
+
+    /**
+     * 编辑分类名
+     * @param id
+     * @param name
+     * @param request
+     * @return
+     */
+    @RequestMapping(value = "/editsort", method = RequestMethod.POST)
+    @ResponseBody
+    private String editUserSort(int id, String name, HttpServletRequest request){
+        return userService.editUserSort(id, name, request);
+    }
+
+    /**
      * 添加友链
      * @param name
      * @param link

@@ -184,6 +184,7 @@ public interface UserDao {
 
     /**
      * 添加文章
+     *
      * @param uid
      * @param title
      * @param publisht
@@ -196,12 +197,13 @@ public interface UserDao {
     @Insert("insert into article (uid, title, publisht, reviset, sortid, label, content) " +
             "values " +
             "(#{uid}, #{title}, #{publisht}, #{reviset}, #{sortid}, #{label}, #{content});")
-    int insertArticle(@Param("uid") int uid,@Param("title") String title,@Param("publisht") String publisht,
-                      @Param("reviset") String reviset,@Param("sortid") int sortid,
-                      @Param("label") String label,@Param("content") String content);
+    int insertArticle(@Param("uid") int uid, @Param("title") String title, @Param("publisht") String publisht,
+                      @Param("reviset") String reviset, @Param("sortid") int sortid,
+                      @Param("label") String label, @Param("content") String content);
 
     /**
      * 获取分类
+     *
      * @param uid
      * @return
      */
@@ -210,34 +212,66 @@ public interface UserDao {
 
     /**
      * 插入分类数据
+     *
      * @param uid
      * @param name
      * @return
      */
     @Insert("insert into sort (uid, name, defsort) values (#{uid}, #{name}, false)")
-    int insertUserSort(@Param("uid") int uid,@Param("name") String name);
+    int insertUserSort(@Param("uid") int uid, @Param("name") String name);
+
+    /**
+     * 删除指定用户分类
+     *
+     * @param id
+     * @param uid
+     * @return
+     */
+    @Delete("delete from sort where id = #{id} and uid = #{uid}")
+    int deleteUserSort(@Param("id") int id, @Param("uid") int uid);
+
+    /**
+     * 计算现有分类下的文章个数
+     * @param sid
+     * @return
+     */
+    @Select("select count(*) from article where sortid = #{sid}")
+    int findUserSortArticleSize(@Param("sid") int sid);
+
+    /**
+     * 修改分类名
+     * @param id
+     * @param uid
+     * @param name
+     * @return
+     */
+    @Update("update sort set name = #{name} where id = #{id} and uid = #{uid}")
+    int updateUserSort(@Param("id") int id, @Param("uid") int uid, @Param("name") String name);
 
     /**
      * 添加友链
+     *
      * @param name
      * @param link
      * @return
      */
     @Insert("insert into blogroll (name, link) values (#{name}, #{link});")
-    int insertBlogRoll(@Param("name") String name,@Param("link") String link);
+    int insertBlogRoll(@Param("name") String name, @Param("link") String link);
 
     /**
      * 修改友链
+     *
      * @param id
      * @param name
      * @param link
      * @return
      */
     @Update("update blogroll set name = #{name}, link = #{link} where id = #{id}")
-    int updateBlogRoll(@Param("id") int id,@Param("name") String name,@Param("link") String link);
+    int updateBlogRoll(@Param("id") int id, @Param("name") String name, @Param("link") String link);
 
     /**
      * 删除友链
+     *
      * @param id
      * @return
      */
@@ -246,6 +280,7 @@ public interface UserDao {
 
     /**
      * 获取用户信息
+     *
      * @param uid
      * @return
      */
@@ -256,25 +291,28 @@ public interface UserDao {
 
     /**
      * 修改轮播图
+     *
      * @param id
      * @param name
      * @param link
      * @return
      */
     @Update("update homephoto set name = #{name}, link = #{link} where id = #{id}")
-    int updateHomePhoto(@Param("id") int id,@Param("name") String name,@Param("link") String link);
+    int updateHomePhoto(@Param("id") int id, @Param("name") String name, @Param("link") String link);
 
     /**
      * 添加轮播图
+     *
      * @param name
      * @param link
      * @return
      */
     @Insert("insert into homephoto (name, link) values (#{name}, #{link});")
-    int insertHomePhoto(@Param("name") String name,@Param("link") String link);
+    int insertHomePhoto(@Param("name") String name, @Param("link") String link);
 
     /**
      * 删除轮播图
+     *
      * @param id
      * @return
      */
@@ -283,6 +321,7 @@ public interface UserDao {
 
     /**
      * 查询是否有重复的昵称
+     *
      * @param nickname
      * @return
      */
@@ -291,24 +330,27 @@ public interface UserDao {
 
     /**
      * 修改昵称
+     *
      * @param uid
      * @param nickname
      * @return
      */
     @Update("update account set nickname = #{nickname} where uid = #{uid}")
-    int updateNickname(@Param("uid") int uid,@Param("nickname") String nickname);
+    int updateNickname(@Param("uid") int uid, @Param("nickname") String nickname);
 
     /**
      * 修改地址
+     *
      * @param uid
      * @param address
      * @return
      */
     @Update("update account set address = #{address} where uid = #{uid}")
-    int updateAddress(@Param("uid") int uid,@Param("address") String address);
+    int updateAddress(@Param("uid") int uid, @Param("address") String address);
 
     /**
      * 查询是否有重复的邮箱
+     *
      * @param email
      * @return
      */
@@ -317,15 +359,17 @@ public interface UserDao {
 
     /**
      * 修改邮箱
+     *
      * @param uid
      * @param email
      * @return
      */
     @Update("update account set email = #{email} where uid = #{uid}")
-    int updateEmail(@Param("uid") int uid,@Param("email") String email);
+    int updateEmail(@Param("uid") int uid, @Param("email") String email);
 
     /**
      * 查询电话号码是否重复
+     *
      * @param tel
      * @return
      */
@@ -334,24 +378,27 @@ public interface UserDao {
 
     /**
      * 修改电话号码
+     *
      * @param uid
      * @param tel
      * @return
      */
     @Update("update account set tel = #{tel} where uid = #{uid}")
-    int updateTel(@Param("uid") int uid,@Param("tel") String tel);
+    int updateTel(@Param("uid") int uid, @Param("tel") String tel);
 
     /**
      * 编辑介绍
+     *
      * @param uid
      * @param introduce
      * @return
      */
     @Update("update account set introduce = #{introduce} where uid = #{uid}")
-    int updateIntroduce(@Param("uid") int uid,@Param("introduce") String introduce);
+    int updateIntroduce(@Param("uid") int uid, @Param("introduce") String introduce);
 
     /**
      * 修改介绍图片
+     *
      * @param perphoto
      * @return
      */
@@ -360,6 +407,7 @@ public interface UserDao {
 
     /**
      * 修改介绍内容
+     *
      * @param percontent
      * @return
      */
@@ -368,6 +416,7 @@ public interface UserDao {
 
     /**
      * 获取指定用户文章
+     *
      * @param uid
      * @param start
      * @param size
@@ -380,10 +429,11 @@ public interface UserDao {
             "left join sort s on s.id = a.sortid " +
             "where a.uid = #{uid} " +
             "order by a.publisht desc limit #{start}, #{size};")
-    List<ReArticleList> findUserArticle(@Param("uid") int uid,@Param("start") int start, @Param("size") int size);
+    List<ReArticleList> findUserArticle(@Param("uid") int uid, @Param("start") int start, @Param("size") int size);
 
     /**
      * 获取用户文章数量
+     *
      * @param uid
      * @return
      */
@@ -392,9 +442,9 @@ public interface UserDao {
 
     @Update("update article set title = #{title}, reviset = #{reviset}, sortid = #{sortid}, label = #{label}, content = #{content} " +
             "where id = #{aid} and uid = #{uid};")
-    int updateUserArticle(@Param("aid") int aid, @Param("uid") int uid,@Param("title") String title,
-                          @Param("reviset") String reviset,@Param("sortid") int sortid,
-                          @Param("label") String label,@Param("content") String content);
+    int updateUserArticle(@Param("aid") int aid, @Param("uid") int uid, @Param("title") String title,
+                          @Param("reviset") String reviset, @Param("sortid") int sortid,
+                          @Param("label") String label, @Param("content") String content);
 
     @Delete("delete from article where id = #{aid} and uid = #{uid};")
     int delUserArticle(@Param("aid") int aid, @Param("uid") int uid);

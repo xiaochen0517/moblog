@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
+import java.io.Console;
 import java.io.File;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -33,7 +34,8 @@ import java.util.Map;
  * @version 0.1
  */
 @Component
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements UserService
+{
 
     private static final String TAG = "UserServiceImpl";
 
@@ -398,6 +400,79 @@ public class UserServiceImpl implements UserService {
             return JSONObject.toJSONString(map);
         }
         // 成功获取
+        map.put(status, 200);
+        return JSONObject.toJSONString(map);
+    }
+
+    @Override
+    public String delUserSort(int id, HttpServletRequest request) {
+        Map<String, Object> map = new HashMap<>();
+        if (id < 1){
+            map.put(status, 404);
+            return JSONObject.toJSONString(map);
+        }
+        String username = (String) request.getSession().getAttribute("username");
+        //判断数据
+        if (username == null || username.equals("")) {
+            map.put(status, 405);
+            return JSONObject.toJSONString(map);
+        }
+        // 获取uid
+        int uid = userDao.findUserId(username);
+        if (uid < 1) {
+            // 获取错误
+            map.put(status, 406);
+            return JSONObject.toJSONString(map);
+        }
+        // 获取分类下的文章个数
+        int articleSize = userDao.findUserSortArticleSize(id);
+        Log.d(TAG, articleSize);
+        if (articleSize > 0){
+            map.put(status, 407);
+            return JSONObject.toJSONString(map);
+        }
+        // 删除分类
+        int restatus = userDao.deleteUserSort(id, uid);
+        if (restatus != 1){
+            // 删除失败
+            map.put(status, 408);
+            return JSONObject.toJSONString(map);
+        }
+        map.put(status, 200);
+        return JSONObject.toJSONString(map);
+    }
+
+    @Override
+    public String editUserSort(int id, String name, HttpServletRequest request) {
+        Map<String, Object> map = new HashMap<>();
+        if (id < 1){
+            map.put(status, 404);
+            return JSONObject.toJSONString(map);
+        }
+        if (name == null || name.equals("")) {
+            map.put(status, 406);
+            return JSONObject.toJSONString(map);
+        }
+        String username = (String) request.getSession().getAttribute("username");
+        //判断数据
+        if (username == null || username.equals("")) {
+            map.put(status, 407);
+            return JSONObject.toJSONString(map);
+        }
+        // 获取uid
+        int uid = userDao.findUserId(username);
+        if (uid < 1) {
+            // 获取错误
+            map.put(status, 406);
+            return JSONObject.toJSONString(map);
+        }
+        // 删除分类
+        int restatus = userDao.updateUserSort(id, uid, name);
+        if (restatus != 1){
+            // 删除失败
+            map.put(status, 407);
+            return JSONObject.toJSONString(map);
+        }
         map.put(status, 200);
         return JSONObject.toJSONString(map);
     }
