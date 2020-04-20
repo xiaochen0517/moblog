@@ -262,4 +262,12 @@ public interface UserService {
      * @return
      */
     String delUserArticle(int id, HttpServletRequest request);
+
+    /**
+     * 编辑用户介绍
+     * @param content
+     * @param request
+     * @return
+     */
+    String editRecommendContent(String photoLink, String content, HttpServletRequest request);
 }

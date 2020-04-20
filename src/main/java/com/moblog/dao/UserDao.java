@@ -440,13 +440,37 @@ public interface UserDao {
     @Select("select count(id) from article where uid = #{uid};")
     int findUserArticleSize(int uid);
 
+    /**
+     * 修改用户文章
+     * @param aid
+     * @param uid
+     * @param title
+     * @param reviset
+     * @param sortid
+     * @param label
+     * @param content
+     * @return
+     */
     @Update("update article set title = #{title}, reviset = #{reviset}, sortid = #{sortid}, label = #{label}, content = #{content} " +
             "where id = #{aid} and uid = #{uid};")
     int updateUserArticle(@Param("aid") int aid, @Param("uid") int uid, @Param("title") String title,
                           @Param("reviset") String reviset, @Param("sortid") int sortid,
                           @Param("label") String label, @Param("content") String content);
 
+    /**
+     * 删除用户文章
+     * @param aid
+     * @param uid
+     * @return
+     */
     @Delete("delete from article where id = #{aid} and uid = #{uid};")
     int delUserArticle(@Param("aid") int aid, @Param("uid") int uid);
 
+    /**
+     * 修改管理员介绍
+     * @param content
+     * @return
+     */
+    @Update("update settings set perphoto = #{photolink}, percontent = #{content} where id = 1")
+    int updateAdminRecom(@Param("photolink") String photolink, @Param("content") String content);
 }

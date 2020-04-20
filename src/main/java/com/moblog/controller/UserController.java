@@ -413,4 +413,16 @@ public class UserController {
     private String delUserArticle(int id, HttpServletRequest request){
         return userService.delUserArticle(id, request);
     }
+
+    /**
+     * 修改用户介绍
+     * @param content
+     * @param request
+     * @return
+     */
+    @RequestMapping(value = "/editrecom", method = RequestMethod.POST)
+    @ResponseBody
+    private String editRecommendContent(String photolink, String content, HttpServletRequest request){
+        return userService.editRecommendContent(photolink, content, request);
+    }
 }

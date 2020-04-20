@@ -966,4 +966,27 @@ public class UserServiceImpl implements UserService
         map.put(status, 200);
         return JSONObject.toJSONString(map);
     }
+
+    @Override
+    public String editRecommendContent(String photoLink, String content, HttpServletRequest request) {
+        Map<String, Object> map = new HashMap<>();
+        if (content == null || content.equals("")){
+            map.put(status, 404);
+            return JSONObject.toJSONString(map);
+        }
+        // 检查用户权限
+        if (!UserUtil.checkUserPermission(userDao, request)){
+            map.put(status, 405);
+            return JSONObject.toJSONString(map);
+        }
+        // 开始修改
+        int restatus = userDao.updateAdminRecom(photoLink, content);
+        if (restatus != 1){
+            map.put(status, 406);
+            return JSONObject.toJSONString(map);
+        }
+        // 修改成功
+        map.put(status, 200);
+        return JSONObject.toJSONString(map);
+    }
 }
